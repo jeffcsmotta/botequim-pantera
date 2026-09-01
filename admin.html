@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Painel Admin • Botequim Pantera</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0C0E12">
+
+    <!-- Google Fonts: Outfit + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Admin Stylesheet -->
+    <link rel="stylesheet" href="admin.css?v=20260901b">
+</head>
+<body>
+
+    <!-- PIN Authentication Gate Modal -->
+    <div id="pin-modal" class="pin-gate-overlay">
+        <div class="pin-card">
+            <div class="pin-logo-box">
+                <img src="assets/logo_horizontal.svg" alt="Botequim Pantera" class="pin-logo" onerror="this.onerror=null;this.src='assets/logo.svg';">
+            </div>
+            <div class="pin-header">
+                <h2>Painel Admin</h2>
+                <p>Controle rápido de cardápio, preços e disponibilidade</p>
+            </div>
+            
+            <button type="button" class="btn-biometric" id="btn-biometric" onclick="authenticateWithBiometrics()" style="display:none;">
+                <i data-lucide="fingerprint" style="width:18px;height:18px;"></i>
+                <span>Entrar com Biometria / TouchID</span>
+            </button>
+
+            <div class="pin-divider-text">ou digite o PIN</div>
+
+            <div class="pin-display">
+                <div class="pin-dot" id="dot-0"></div>
+                <div class="pin-dot" id="dot-1"></div>
+                <div class="pin-dot" id="dot-2"></div>
+                <div class="pin-dot" id="dot-3"></div>
+            </div>
+            <input type="password" id="pin-hidden-input" maxlength="4" pattern="[0-9]*" inputmode="numeric" autofocus autocomplete="off">
+            <div class="pin-numpad">
+                <button type="button" class="num-btn" onclick="appendPin('1')">1</button>
+                <button type="button" class="num-btn" onclick="appendPin('2')">2</button>
+                <button type="button" class="num-btn" onclick="appendPin('3')">3</button>
+                <button type="button" class="num-btn" onclick="appendPin('4')">4</button>
+                <button type="button" class="num-btn" onclick="appendPin('5')">5</button>
+                <button type="button" class="num-btn" onclick="appendPin('6')">6</button>
+                <button type="button" class="num-btn" onclick="appendPin('7')">7</button>
+                <button type="button" class="num-btn" onclick="appendPin('8')">8</button>
+                <button type="button" class="num-btn" onclick="appendPin('9')">9</button>
+                <button type="button" class="num-btn action" onclick="clearPin()">C</button>
+                <button type="button" class="num-btn" onclick="appendPin('0')">0</button>
+                <button type="button" class="num-btn action" onclick="submitPin()"><i data-lucide="arrow-right" style="width:20px;height:20px;"></i></button>
+            </div>
+            <div class="pin-hint">PIN padrão: <strong>1234</strong></div>
+        </div>
+    </div>
+
+    <!-- Admin Main App Interface (Initially Hidden until PIN is valid) -->
+    <div id="admin-app" class="admin-layout" style="display: none;">
+        
+        <!-- Header Superior -->
+        <header class="admin-header">
+            <div class="admin-container header-row">
+                <div class="admin-brand-col">
+                    <a href="index.html" class="admin-logo-link" title="Ver cardápio público">
+                        <img src="assets/logo_horizontal.svg" alt="Botequim Pantera" class="admin-brand-img" onerror="this.onerror=null;this.src='assets/logo.svg';">
+                    </a>
+                    <div class="admin-badge-strip">
+                        <span class="owner-pill"><i data-lucide="shield-check" style="width:13px;height:13px;"></i> Admin do Dono</span>
+                    </div>
+                </div>
+
+                <div class="admin-actions-col">
+                    <a href="index.html" target="_blank" class="btn-preview-link" title="Abrir cardápio do cliente">
+                        <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+                        <span class="btn-text">Ver Loja</span>
+                    </a>
+                    <button type="button" class="btn-primary-add" onclick="openProductModal()" aria-label="Adicionar novo produto">
+                        <i data-lucide="plus-circle" style="width:18px;height:18px;"></i>
+                        <span>+ Novo Prato</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Faixa de Métricas Rápidas -->
+        <section class="admin-metrics-section">
+            <div class="admin-container">
+                <div class="metrics-grid">
+                    <div class="metric-card" onclick="filterAdminCategory('todos')" style="cursor: pointer;" title="Ver todos os itens">
+                        <div class="metric-icon-box bg-gold">
+                            <i data-lucide="package" style="width:20px;height:20px;color:#F59E0B;"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Total de Pratos</span>
+                            <span class="metric-value" id="metric-total-products">36</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card" onclick="filterByStatus('active')" style="cursor: pointer;" title="Ver itens ativos">
+                        <div class="metric-icon-box bg-emerald">
+                            <i data-lucide="check-circle" style="width:20px;height:20px;color:#10B981;"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Ativos no Cardápio</span>
+                            <span class="metric-value" id="metric-active-products">36</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card" onclick="filterByStatus('paused')" style="cursor: pointer;" title="Ver itens pausados">
+                        <div class="metric-icon-box bg-ruby">
+                            <i data-lucide="pause-circle" style="width:20px;height:20px;color:#EF4444;"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Pausados / Esgotados</span>
+                            <span class="metric-value" id="metric-paused-products">0</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon-box bg-amber">
+                            <i data-lucide="layers" style="width:20px;height:20px;color:#FBBF24;"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Categorias Ativas</span>
+                            <span class="metric-value" id="metric-total-categories">9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de Controle & Filtros -->
+        <section class="admin-controls-section">
+            <div class="admin-container">
+                <div class="controls-card">
+                    <!-- Busca do Admin -->
+                    <div class="admin-search-wrapper">
+                        <i data-lucide="search" class="admin-search-icon"></i>
+                        <input type="text" id="admin-search-input" class="admin-search-input" placeholder="Buscar por nome do prato, ingrediente ou ID..." oninput="handleAdminSearch(event)">
+                    </div>
+
+                    <!-- Filtro por Categoria -->
+                    <div class="admin-category-pills">
+                        <button type="button" class="admin-cat-pill active" data-cat="todos" onclick="filterAdminCategory('todos')">Todos</button>
+                        <button type="button" class="admin-cat-pill" data-cat="baurus" onclick="filterAdminCategory('baurus')">Baurus</button>
+                        <button type="button" class="admin-cat-pill" data-cat="petiscos" onclick="filterAdminCategory('petiscos')">Petiscos</button>
+                        <button type="button" class="admin-cat-pill" data-cat="pratos" onclick="filterAdminCategory('pratos')">Pratos</button>
+                        <button type="button" class="admin-cat-pill" data-cat="sanduiches" onclick="filterAdminCategory('sanduiches')">Sanduíches</button>
+                        <button type="button" class="admin-cat-pill" data-cat="chopps" onclick="filterAdminCategory('chopps')">Chopps</button>
+                        <button type="button" class="admin-cat-pill" data-cat="drinks" onclick="filterAdminCategory('drinks')">Drinks</button>
+                        <button type="button" class="admin-cat-pill" data-cat="bebidas" onclick="filterAdminCategory('bebidas')">Bebidas</button>
+                        <button type="button" class="admin-cat-pill" data-cat="sobremesas" onclick="filterAdminCategory('sobremesas')">Sobremesas</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listagem de Produtos -->
+        <main class="admin-main-section">
+            <div class="admin-container">
+                <div class="admin-table-card">
+                    <div class="table-header-strip">
+                        <h3>Itens do Cardápio (<span id="table-count-badge">36</span>)</h3>
+                        <div class="table-actions-right">
+                            <button type="button" class="btn-secondary-action" onclick="exportCatalogBackup()" title="Baixar backup do cardápio em JSON">
+                                <i data-lucide="download" style="width:14px;height:14px;"></i> Exportar Backup
+                            </button>
+                            <label class="btn-secondary-action" style="cursor: pointer;" title="Restaurar backup JSON">
+                                <i data-lucide="upload" style="width:14px;height:14px;"></i> Importar
+                                <input type="file" id="import-json-file" accept=".json" style="display:none;" onchange="importCatalogBackup(event)">
+                            </label>
+                            <button type="button" class="btn-secondary-action btn-danger" onclick="resetToDefaultCatalog()" title="Restaurar catálogo de fábrica">
+                                <i data-lucide="rotate-ccw" style="width:14px;height:14px;"></i> Resetar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lista de Produtos -->
+                    <div class="admin-products-list" id="admin-products-container">
+                        <!-- Injetado dinamicamente via admin.js -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Adicionar / Editar Produto -->
+    <div id="product-edit-modal" class="admin-modal-overlay">
+        <div class="admin-modal-card">
+            <div class="admin-modal-header">
+                <h3 id="edit-modal-title">Novo Prato</h3>
+                <button type="button" class="btn-close-admin-modal" onclick="closeProductEditModal()">
+                    <i data-lucide="x" style="width:20px;height:20px;"></i>
+                </button>
+            </div>
+
+            <form id="product-edit-form" onsubmit="handleSaveProduct(event)">
+                <input type="hidden" id="edit-product-id">
+                
+                <div class="modal-form-body">
+                    <div class="form-group">
+                        <label for="edit-product-name">Nome do Prato *</label>
+                        <input type="text" id="edit-product-name" class="admin-input" placeholder="Ex: Bauru Caxiense Tradicional ao Prato" required>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="edit-product-category">Categoria *</label>
+                            <select id="edit-product-category" class="admin-input" required>
+                                <option value="baurus">Baurus Caxienses</option>
+                                <option value="petiscos">Petiscos &amp; Porções</option>
+                                <option value="pratos">Pratos &amp; Grelhados</option>
+                                <option value="sanduiches">Sanduíches &amp; Burgers</option>
+                                <option value="chopps">Chopps &amp; Cervejas</option>
+                                <option value="drinks">Drinks &amp; Caipirinhas</option>
+                                <option value="bebidas">Bebidas</option>
+                                <option value="sobremesas">Sobremesas</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-product-price">Preço Base (R$) *</label>
+                            <input type="number" step="0.10" id="edit-product-price" class="admin-input" placeholder="0.00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-product-badge">Badge / Selo em Destaque</label>
+                        <input type="text" id="edit-product-badge" class="admin-input" placeholder="Ex: Campeão Sabores do Sul ⭐, Mais Pedido 🔥">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-product-desc">Descrição &amp; Ingredientes *</label>
+                        <textarea id="edit-product-desc" class="admin-textarea" placeholder="Descreva os ingredientes, acompanhamentos e porção..." rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-product-img">URL da Imagem</label>
+                        <input type="text" id="edit-product-img" class="admin-input" placeholder="https://images.unsplash.com/...">
+                    </div>
+                </div>
+
+                <div class="modal-form-footer">
+                    <button type="button" class="btn-admin-cancel" onclick="closeProductEditModal()">Cancelar</button>
+                    <button type="submit" class="btn-admin-save">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Toast Notification -->
+    <div id="admin-toast" class="admin-toast"></div>
+
+    <!-- Admin Script -->
+    <script src="admin.js?v=20260901b"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 90" width="420" height="90">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Logo Round Badge (Red & Charcoal) -->
+  <g transform="translate(10, 5) scale(0.88)">
+    <!-- Outer Charcoal Ring -->
+    <circle cx="45" cy="45" r="42" fill="#262A33" />
+    <circle cx="45" cy="45" r="37" fill="#E5E7EB" stroke="#FFFFFF" stroke-width="1.5" />
+    
+    <!-- Red Inner Circle -->
+    <circle cx="45" cy="45" r="30" fill="#DC2626" />
+    
+    <!-- Panther Head Vector -->
+    <path d="M 28,48 C 28,32 38,24 50,24 C 58,24 64,28 66,35 C 67,39 65,45 61,48 C 65,50 67,54 65,58 C 63,62 58,64 52,64 C 42,64 32,58 28,48 Z" fill="#111827" />
+    <path d="M 38,28 L 44,20 L 46,27 Z" fill="#DC2626" />
+    <!-- Glowing Green Eye -->
+    <circle cx="56" cy="38" r="2.2" fill="#84CC16" />
+    <circle cx="56.5" cy="38" r="1.2" fill="#000000" />
+    
+    <!-- Red Banner Bottom -->
+    <rect x="18" y="68" width="54" height="14" rx="2" fill="#DC2626" />
+    <text x="45" y="79" font-family="'Outfit', sans-serif" font-size="7" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">RESTAURANTE BAR</text>
+  </g>
+
+  <!-- Typography Section -->
+  <text x="102" y="36" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#64748B" letter-spacing="4">BOTEQUIM</text>
+  <text x="102" y="64" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900" fill="#DC2626" letter-spacing="1.5">PANTERA</text>
+  <text x="102" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#1F2937" letter-spacing="1.2">BAURU CAXIENSE • COMIDA CASEIRA • CHOPP</text>
+</svg>

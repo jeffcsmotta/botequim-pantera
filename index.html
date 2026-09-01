@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Botequim Pantera | Bauru Caxiense Tradicional, Comida Caseira &amp; Chopp em Caxias do Sul</title>
+    <meta name="description" content="🍺 Botequim Pantera — O tradicional Bauru Caxiense ao prato, à la minutas premiadas, porções generosas de boteco e chopp geladíssimo no Bairro Exposição em Caxias do Sul. Peça direto no WhatsApp!">
+    <meta name="theme-color" content="#DC2626">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Botequim Pantera | Bauru Caxiense &amp; Boteco de Raiz">
+    <meta property="og:description" content="Cardápio oficial com Baurus ao prato premiados, à la minutas, bolinhos de costela 12h, tábuas de petiscos e chopp artesanal na Rua Tronca, Caxias do Sul.">
+    <meta property="og:image" content="assets/logo_botequim_pantera.png">
+
+    <!-- Google Fonts: Outfit + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20260901c">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Header Despoluído & Focado -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-wrapper" aria-label="Página Inicial Botequim Pantera">
+                <img src="assets/logo_horizontal.svg" alt="Botequim Pantera" class="brand-logo-img" onerror="this.onerror=null;this.src='assets/logo_botequim_pantera.png';">
+                <h1 class="sr-only">Botequim Pantera - Caxias do Sul</h1>
+            </a>
+
+            <!-- Status do Estabelecimento & Ações -->
+            <div class="nav-actions">
+                <div class="status-compact" id="header-status">
+                    <span class="status-dot"></span>
+                    <span id="status-text-header">Aberto Hoje às 18h00 • Faça seu Pedido</span>
+                </div>
+
+                <!-- Botão Compre esse site (Azul Royal Elétrico de Alto Contraste - Sólido) -->
+                <a href="proposta.html" class="btn-buy-site" title="Compre esse site pronto para o seu negócio">
+                    <i data-lucide="zap" style="width:14px;height:14px;color:#FEF08A;fill:#FEF08A;"></i>
+                    <span class="btn-buy-text">Compre este site</span>
+                </a>
+
+                <!-- Botão Lixeira no Cabeçalho (Outline) -->
+                <button type="button" class="btn-header-trash" id="btn-header-trash" onclick="window.clearCart()" title="Limpar Pedido" aria-label="Limpar Pedido">
+                    <i data-lucide="trash-2" style="width:16px;height:16px;"></i>
+                </button>
+
+                <!-- Botão Carrinho Desktop ("Pedido") / Mobile (Ícone) -->
+                <button type="button" class="btn-cart-trigger" id="btn-cart-nav" onclick="window.openCart()" aria-label="Ver Carrinho de Compras">
+                    <i data-lucide="shopping-bag" style="width:18px;height:18px;"></i>
+                    <span class="cart-btn-label">Pedido</span>
+                    <span class="cart-total-header" id="cart-total-nav">R$ 0,00</span>
+                    <span class="cart-count-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Categorias & Busca Rápida -->
+    <section class="catalog-nav-section">
+        <div class="container">
+            <!-- Busca Integrada -->
+            <div class="search-box-wrap">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-input" class="search-input" placeholder="Buscar bauru, à la minuta, bolinho de costela, chopp, porções..." oninput="window.handleSearch(event)">
+                <button type="button" class="btn-clear-search" id="btn-clear-search" onclick="window.clearSearch()" style="display:none;" aria-label="Limpar busca">
+                    <i data-lucide="x" style="width:16px;height:16px;"></i>
+                </button>
+            </div>
+
+            <!-- Navegação Compacta / Chips Otimizados de Categorias -->
+            <nav class="category-scroll-container" aria-label="Categorias do Cardápio">
+                <div class="category-scroll-pills">
+                    <button type="button" class="cat-pill active" data-category="todos" onclick="window.filterCategory('todos')">
+                        <i data-lucide="utensils" style="width:14px;height:14px;"></i>
+                        <span>Todos</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="promocoes" onclick="window.filterCategory('promocoes')">
+                        <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+                        <span>Mais Pedidos</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="baurus" onclick="window.filterCategory('baurus')">
+                        <i data-lucide="flame" style="width:14px;height:14px;"></i>
+                        <span>Baurus Caxienses</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="pratos" onclick="window.filterCategory('pratos')">
+                        <i data-lucide="chef-hat" style="width:14px;height:14px;"></i>
+                        <span>À La Minutas &amp; Pratos</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="petiscos" onclick="window.filterCategory('petiscos')">
+                        <i data-lucide="layers" style="width:14px;height:14px;"></i>
+                        <span>Petiscos &amp; Porções</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="sanduiches" onclick="window.filterCategory('sanduiches')">
+                        <i data-lucide="sandwich" style="width:14px;height:14px;"></i>
+                        <span>Sanduíches &amp; Xis</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="chopps" onclick="window.filterCategory('chopps')">
+                        <i data-lucide="beer" style="width:14px;height:14px;"></i>
+                        <span>Chopps &amp; Cervejas</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="drinks" onclick="window.filterCategory('drinks')">
+                        <i data-lucide="glass-water" style="width:14px;height:14px;"></i>
+                        <span>Drinks &amp; Caipirinhas</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="bebidas" onclick="window.filterCategory('bebidas')">
+                        <i data-lucide="cup-soda" style="width:14px;height:14px;"></i>
+                        <span>Bebidas</span>
+                    </button>
+                    <button type="button" class="cat-pill" data-category="sobremesas" onclick="window.filterCategory('sobremesas')">
+                        <i data-lucide="cake" style="width:14px;height:14px;"></i>
+                        <span>Sobremesas</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content: Grid de Produtos & Dica da Casa no Final -->
+    <main class="catalog-section">
+        <div class="container">
+
+            <!-- Grid de Produtos -->
+            <div class="catalog-grid" id="catalog-grid">
+                <!-- Injetado dinamicamente via app.js -->
+            </div>
+
+            <!-- Banner de Upsell / Dica do Boteco (Posicionado no Final do Cardápio) -->
+            <div class="upsell-container" id="upsell-container" style="margin-top: 36px;">
+                <div class="upsell-card">
+                    <div class="upsell-left">
+                        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=300&q=80" alt="Polenta Frita com Queijo Colonial" class="upsell-img-thumb">
+                        <div class="upsell-info">
+                            <span class="upsell-tag">⭐ Dica da Casa</span>
+                            <h2 class="upsell-title">Que tal uma Porção de Polenta Frita com Queijo Colonial Ralado?</h2>
+                            <p class="upsell-sub">Crocante por fora e macia por dentro, finalizada com queijo da Serra por apenas <strong>R$ 24,90</strong>.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-upsell-quick" onclick="window.openProductModal('pantera-010')">
+                        <i data-lucide="plus-circle" style="width:16px;height:16px;"></i>
+                        <span>Adicionar ao Pedido</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Chef Story & Differentials (Clean Light Section) -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <span class="story-badge">
+                        <i data-lucide="award" style="width:12px;height:12px;"></i> Tradição &amp; Alma Boêmia
+                    </span>
+                    <h2 class="story-title">A autêntica alma dos botecos de raiz <span>no coração da Rua Tronca.</span></h2>
+                    <p class="story-p">O <strong>Botequim Pantera</strong> é ponto de encontro clássico no Bairro Exposição em Caxias do Sul. Conhecido por seus <strong>baurus caxienses generosos servidos no prato</strong>, cortes nobres na chapa, à la minutas e chopp artesanal tirado na temperatura perfeita.</p>
+                    <p class="story-p">Consagrado pelo <strong>Prêmio Revista Sabores do Sul 2024 na categoria Melhor Comida Caseira</strong>, o Pantera une o ambiente acolhedor e descontraído de um botequim tradicional à excelência gastronômica com ingredientes frescos e selecionados da Serra Gaúcha.</p>
+                    
+                    <div class="story-stats-row">
+                        <div class="stat-box">
+                            <span class="stat-num">25+</span>
+                            <span class="stat-desc">Anos de Tradição</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">4.9★</span>
+                            <span class="stat-desc">+700 Avaliações</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">2024</span>
+                            <span class="stat-desc">Prêmio Sabores do Sul</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Ambiente Botequim Pantera - Caxias do Sul" class="story-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews (Social Proof) -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">Prova Social Consolidada</span>
+                <h2 class="section-title">O carinho de quem frequenta o Pantera</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                    </div>
+                    <p class="review-text">"O melhor Bauru Caxiense da cidade sem comparação! Filé macio que desmancha, queijo no ponto certo e as batatas fritas são sequinhas. Atendimento nota 10 na Rua Tronca."</p>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar-letter">R</div>
+                        <div>
+                            <div class="reviewer-name">Rodrigo Castilhos</div>
+                            <div class="reviewer-source">Avaliação no Google Maps • 5.0★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                    </div>
+                    <p class="review-text">"Os bolinhos de costela com geleia de pimenta e o chopp artesanal trincando de gelado são a combinação perfeita para o happy hour. Porções muito bem servidas!"</p>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar-letter">F</div>
+                        <div>
+                            <div class="reviewer-name">Fernanda Bordin</div>
+                            <div class="reviewer-source">Avaliação no Google Maps • 5.0★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                        <i data-lucide="star" style="width:16px;height:16px;fill:#F59E0B;stroke:none;"></i>
+                    </div>
+                    <p class="review-text">"À la minuta à milanesa fantástica e a Tábua Pantera alimenta fácil 4 pessoas. Pedi pela tele-entrega e chegou super quente e bem embalado."</p>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar-letter">L</div>
+                        <div>
+                            <div class="reviewer-name">Lucas Marcon</div>
+                            <div class="reviewer-source">Avaliação no Google Maps • 5.0★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info-card">
+                    <span class="section-tag">Venha nos Visitar</span>
+                    <h3 class="story-title" style="color:var(--text-dark);margin-bottom:20px;">Botequim Pantera • Rua Tronca</h3>
+
+                    <div class="info-row">
+                        <div class="info-icon-box">
+                            <i data-lucide="map-pin" style="width:20px;height:20px;"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Endereço Oficial</h4>
+                            <p>Rua Tronca, 1879 – Bairro Exposição<br>Caxias do Sul - RS • CEP 95010-100</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-icon-box">
+                            <i data-lucide="clock" style="width:20px;height:20px;"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Horários de Atendimento</h4>
+                            <p><strong>Terça a Sábado:</strong> 11:30 às 14:00 e 18:30 às 22:30<br>
+                               <strong>Domingo e Segunda:</strong> Fechado</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-icon-box">
+                            <i data-lucide="phone" style="width:20px;height:20px;"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>WhatsApp &amp; Pedidos</h4>
+                            <p>(54) 3419-6942 • Pedidos expressos e tele-entrega</p>
+                        </div>
+                    </div>
+
+                    <div class="location-buttons">
+                        <a href="https://maps.google.com/?q=Botequim+Pantera+Rua+Tronca+1879+Caxias+do+Sul" target="_blank" class="btn-route" rel="noopener noreferrer">
+                            <i data-lucide="navigation" style="width:16px;height:16px;"></i> Abrir no Google Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=Rua+Tronca+1879+Caxias+do+Sul" target="_blank" class="btn-route" style="background:#1E293B;color:#F8FAFC;" rel="noopener noreferrer">
+                            <i data-lucide="compass" style="width:16px;height:16px;"></i> Traçar Rota no Waze
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-embed-wrap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.921389201479!2d-51.1782101!3d-29.1729107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ea2d0c0000001%3A0x1!2sR.+Tronca%2C+1879+-+Exposi%C3%A7%C3%A3o%2C+Caxias+do+Sul+-+RS!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Botequim Pantera"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo_horizontal.svg" alt="Botequim Pantera" style="height:44px;" onerror="this.onerror=null;this.src='assets/logo_botequim_pantera.png';">
+                </div>
+                <div class="footer-copy">
+                    &copy; 2026 Botequim Pantera • Todos os direitos reservados.
+                </div>
+                <div class="footer-admin-wrap">
+                    <a href="admin.html" class="footer-admin-link" title="Acesso restrito ao Painel Admin">
+                        <i data-lucide="shield-check" style="width:13px;height:13px;"></i> Admin
+                    </a>
+                </div>
+            </div>
+            <div class="footer-signature">
+                Tecnologia por <strong>Onira Labs</strong> • Engenharia de Negócios Digitais
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Customization Modal -->
+    <div class="product-modal-wrap" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content-card">
+            <button type="button" class="btn-close-modal" onclick="window.closeProductModal()" aria-label="Fechar modal">
+                <i data-lucide="x" style="width:20px;height:20px;"></i>
+            </button>
+            <div class="modal-hero-img-box">
+                <img id="modal-img" src="" alt="Prato Botequim Pantera">
+                <span class="modal-badge-tag" id="modal-badge"></span>
+            </div>
+            <div class="modal-body-scroll">
+                <h3 class="modal-title" id="modal-title">Nome do Prato</h3>
+                <p class="modal-desc" id="modal-desc">Descrição dos ingredientes e modo de preparo.</p>
+
+                <!-- Dynamic Options Group -->
+                <div id="modal-options-wrap">
+                    <!-- Injetado dinamicamente via app.js -->
+                </div>
+
+                <!-- Observações do Cliente -->
+                <div class="modal-obs-box">
+                    <label for="modal-obs" class="modal-obs-label">
+                        <i data-lucide="message-square" style="width:14px;height:14px;"></i> Alguma observação especial?
+                    </label>
+                    <textarea id="modal-obs" class="modal-obs-input" placeholder="Ex: Carne bem passada, molho à parte, sem cebola..."></textarea>
+                </div>
+            </div>
+
+            <!-- Modal Action Footer -->
+            <div class="modal-footer-action">
+                <div class="modal-qty-selector">
+                    <button type="button" class="btn-qty" onclick="window.modalQtyDec()" aria-label="Diminuir quantidade">-</button>
+                    <span class="qty-num" id="modal-qty-num">1</span>
+                    <button type="button" class="btn-qty" onclick="window.modalQtyInc()" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <button type="button" class="btn-add-modal-submit" onclick="window.addToCartModal()">
+                    <span class="btn-text">Adicionar ao Pedido</span>
+                    <span class="btn-price-val" id="modal-subtotal-price">R$ 0,00</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer (Padrão Onira Master Dark Contrast) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="window.closeCart()"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+        <!-- Header da Gaveta -->
+        <div class="cart-header">
+            <button type="button" class="btn-continue-shopping" onclick="window.closeCart()">
+                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+                <span>Continuar Escolhendo</span>
+            </button>
+            <div class="cart-header-title-box">
+                <h3 class="cart-header-title" id="cart-drawer-title">Seu Pedido</h3>
+                <button type="button" class="btn-drawer-trash" onclick="window.clearCart()" title="Limpar pedido">
+                    <i data-lucide="trash-2" style="width:16px;height:16px;"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Corpo com Rolagem Unificada -->
+        <div class="cart-body-scroll">
+            <!-- Empty State -->
+            <div class="cart-empty-state" id="cart-empty-state">
+                <i data-lucide="shopping-bag" style="width:48px;height:48px;color:#DC2626;margin-bottom:12px;"></i>
+                <h4>Seu carrinho está vazio</h4>
+                <p>Que tal um clássico Bauru Caxiense ou uma porção de bolinhos de costela?</p>
+                <button type="button" class="btn-empty-back" onclick="window.closeCart()">Ver Cardápio</button>
+            </div>
+
+            <!-- Items List Container -->
+            <div class="cart-items-container" id="cart-items-container">
+                <!-- Injetado dinamicamente via app.js -->
+            </div>
+
+            <!-- Checkout Form Section -->
+            <div class="cart-checkout-section" id="cart-checkout-section" style="display:none;">
+                <!-- 1. Tipo de Entrega -->
+                <div class="checkout-group">
+                    <label class="checkout-group-title">
+                        <i data-lucide="bike" style="width:16px;height:16px;"></i> Tipo de Atendimento
+                    </label>
+                    <div class="delivery-type-pills">
+                        <button type="button" class="type-pill active" id="btn-type-delivery" onclick="window.selectDeliveryType('delivery')">
+                            <i data-lucide="truck" style="width:16px;height:16px;"></i>
+                            <span>Tele-Entrega</span>
+                        </button>
+                        <button type="button" class="type-pill" id="btn-type-retirada" onclick="window.selectDeliveryType('retirada')">
+                            <i data-lucide="store" style="width:16px;height:16px;"></i>
+                            <span>Retirada no Balcão</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Bairro para Entrega -->
+                <div class="checkout-group" id="delivery-zone-group">
+                    <label for="delivery-neighborhood-select" class="checkout-group-title">
+                        <i data-lucide="map-pin" style="width:16px;height:16px;"></i> Bairro em Caxias do Sul
+                    </label>
+                    <select id="delivery-neighborhood-select" class="form-select" onchange="window.handleZoneChange(event)">
+                        <!-- Injetado via app.js -->
+                    </select>
+                </div>
+
+                <!-- 3. Dados do Cliente -->
+                <div class="checkout-group">
+                    <label class="checkout-group-title">
+                        <i data-lucide="user" style="width:16px;height:16px;"></i> Identificação na Comanda
+                    </label>
+                    <input type="text" id="client-name" class="form-input" placeholder="Seu Nome Completo" required>
+                    
+                    <div id="delivery-address-group" style="margin-top: 10px;">
+                        <input type="text" id="client-address" class="form-input" placeholder="Rua, Número, Apto / Bloco, Ponto de Referência">
+                    </div>
+                </div>
+
+                <!-- 4. Forma de Pagamento -->
+                <div class="checkout-group">
+                    <label class="checkout-group-title">
+                        <i data-lucide="credit-card" style="width:16px;height:16px;"></i> Forma de Pagamento
+                    </label>
+                    <div class="payment-method-pills">
+                        <button type="button" class="pay-pill active" id="btn-pay-pix" onclick="window.selectPayment('pix')">
+                            <i data-lucide="qr-code" style="width:16px;height:16px;"></i>
+                            <span>Pix</span>
+                        </button>
+                        <button type="button" class="pay-pill" id="btn-pay-card" onclick="window.selectPayment('cartao')">
+                            <i data-lucide="credit-card" style="width:16px;height:16px;"></i>
+                            <span>Cartão</span>
+                        </button>
+                        <button type="button" class="pay-pill" id="btn-pay-cash" onclick="window.selectPayment('dinheiro')">
+                            <i data-lucide="banknote" style="width:16px;height:16px;"></i>
+                            <span>Dinheiro</span>
+                        </button>
+                    </div>
+
+                    <div id="cash-change-group" style="display:none; margin-top: 10px;">
+                        <input type="text" id="cash-change-value" class="form-input" placeholder="Precisa de troco para quanto? (Ex: R$ 100,00)">
+                    </div>
+                </div>
+
+                <!-- 5. Resumo Financeiro -->
+                <div class="cart-summary-box">
+                    <div class="summary-line">
+                        <span>Subtotal dos Itens</span>
+                        <strong id="cart-summary-subtotal">R$ 0,00</strong>
+                    </div>
+                    <div class="summary-line">
+                        <span>Taxa de Entrega</span>
+                        <strong id="cart-summary-fee">R$ 8,00</strong>
+                    </div>
+                    <div class="summary-line total-line">
+                        <span>Total do Pedido</span>
+                        <strong class="total-price-emerald" id="cart-summary-total">R$ 0,00</strong>
+                    </div>
+                </div>
+
+                <!-- 6. Botão Despacho WhatsApp -->
+                <button type="button" class="btn-checkout-whatsapp" onclick="window.sendOrderWhatsApp()">
+                    <i data-lucide="send" style="width:20px;height:20px;"></i>
+                    <span>Enviar Pedido no WhatsApp</span>
+                </button>
+
+                <div class="cart-footer-signature">
+                    Cardápio &amp; Tecnologia por <strong>Onira Labs</strong>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Barra Flutuante Mobile do Pedido -->
+    <div class="cart-floating-bar" id="cart-floating-bar" onclick="window.openCart()" style="display:none;">
+        <div class="floating-bar-left">
+            <span class="floating-badge-count" id="floating-bar-count">1 item</span>
+            <span class="floating-bar-label">Ver Pedido</span>
+        </div>
+        <div class="floating-bar-right">
+            <span class="floating-bar-price" id="floating-bar-total">R$ 0,00</span>
+            <i data-lucide="chevron-right" style="width:18px;height:18px;"></i>
+        </div>
+    </div>
+
+    <!-- Floating Proposal Widget (.onira-cta) -->
+    <div class="onira-cta">
+        <a href="proposta.html" class="onira-cta-link" title="Saiba como funciona meu trabalho">
+            <img src="assets/jeff-avatar.webp" alt="Jefferson Motta - Onira Labs" class="onira-cta-avatar" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80';">
+            <div class="onira-cta-text-wrap">
+                <span class="onira-cta-hook">Gostou do site?</span>
+                <span class="onira-cta-call">Saiba como funciona meu trabalho &rarr;</span>
+            </div>
+        </a>
+        <button type="button" class="onira-cta-close" onclick="window.toggleOniraCta()" title="Recolher tag" aria-label="Recolher tag">
+            <i data-lucide="x" style="width:14px;height:14px;"></i>
+        </button>
+        <div class="onira-cta-collapsed-tag" onclick="window.toggleOniraCta()">
+            <i data-lucide="briefcase" style="width:14px;height:14px;"></i>
+            <span>💼 Compre esse site</span>
+        </div>
+    </div>
+
+    <!-- Script Application -->
+    <script src="app.js?v=20260901c"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => console.log('SW falhou:', err));
+        }
+    </script>
+</body>
+</html>
