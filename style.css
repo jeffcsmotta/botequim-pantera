@@ -2,6 +2,7 @@
  * Botequim Pantera - Style System & Responsive Architecture
  * Bauru Caxiense Tradicional, Comida Caseira & Chopp Artesanal
  * Onira Labs - Clean Light / Hybrid Theme (Cores Oficiais: Vermelho, Carvão e Branco)
+ * Padrão Arquitetural Fafá Doces
  */
 
 :root {
@@ -29,7 +30,7 @@
     --bg-page: #F8FAFC;            /* Clean light page background */
     --bg-card: #FFFFFF;            /* White Card */
     --bg-card-hover: #FFFFFF;
-    --bg-dark-drawer: #0F172A;     /* Dark Drawer Contrast Master CLAEM style */
+    --bg-dark-drawer: #0F172A;     /* Dark Drawer Contrast Master Fafá/CLAEM style */
     --bg-dark-card: #1E293B;
     
     --text-dark: #0F172A;
@@ -97,7 +98,7 @@ body {
 }
 
 /* ==========================================================================
-   Header & Top Bar Despoluído (Light Mode)
+   Header & Top Bar Despoluído (Padrão Fafá Doces)
    ========================================================================== */
 .site-header {
     background: rgba(255, 255, 255, 0.96);
@@ -123,6 +124,7 @@ body {
     align-items: center;
     text-decoration: none;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .brand-logo-img {
@@ -193,28 +195,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Botão Lixeira Header */
-.btn-header-trash {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #F1F5F9;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.btn-header-trash:hover {
-    color: #EF4444;
-    border-color: #FECACA;
-    background: #FEE2E2;
-}
-
-/* Gatilho de Carrinho (Sólido Vermelho) */
+/* Gatilho de Carrinho (Sólido Vermelho com Badge) */
 .btn-cart-trigger {
     display: flex;
     align-items: center;
@@ -1296,7 +1277,7 @@ body {
 }
 
 /* ==========================================================================
-   Cart Drawer (Onira Master Dark Style)
+   Cart Drawer (Padrão Fafá Doces Master)
    ========================================================================== */
 .cart-overlay {
     position: fixed;
@@ -1338,59 +1319,73 @@ body {
     transform: translateX(0);
 }
 
+/* Header em 3 Colunas Perfeitamente Alinhadas (Fafá Standard) */
 .cart-header {
-    background: #0B0B0C;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    background: #0B0E14;
     padding: 14px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 8px;
 }
 
+/* Botão Cardápio em modo Preenchido Branco Estático */
 .btn-continue-shopping {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(245, 158, 11, 0.15);
-    border: 1px solid #F59E0B;
-    color: #F59E0B;
-    padding: 7px 12px;
+    background: #FFFFFF !important;
+    border: none !important;
+    color: #0F172A !important; /* Texto escuro contrastante */
+    padding: 6px 14px;
     border-radius: var(--radius-pill);
     font-size: 0.78rem;
     font-weight: 800;
     cursor: pointer;
-    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    white-space: nowrap;
 }
 
-.cart-header-title-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.btn-continue-shopping:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
 }
 
 .cart-header-title {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 900;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    white-space: nowrap;
 }
 
-.btn-drawer-trash {
+.btn-clear-cart-circle {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #94A3B8;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #F8FAFC;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease;
+    justify-self: end;
 }
 
-.btn-drawer-trash:hover {
-    color: #EF4444;
-    border-color: #EF4444;
+.btn-clear-cart-circle:hover {
+    background: rgba(220, 38, 38, 0.3);
+    border-color: #DC2626;
+    color: #FFFFFF;
 }
 
 .cart-body-scroll {

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Comercial | Botequim Pantera &amp; Onira Labs</title>
+    <title>Proposta Comercial | Botequim Pantera & Onira Labs</title>
     <meta name="description" content="Proposta comercial de canal próprio para o Botequim Pantera em Caxias do Sul: cardápio interativo de alta velocidade, pedidos diretos no WhatsApp oficial e domínio próprio sem taxas por pedido.">
 
     <!-- Página de proposta restrita a link direto -->
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
 
-    <!-- Google Fonts: Outfit + Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +26,8 @@
             --text-main: #334155;
             --text-muted: #64748B;
 
-            --primary: #0F172A;
+            --primary: #DC2626;
+            --primary-dark: #0F172A;
             --primary-hover: #1E293B;
 
             --accent: #F59E0B;
@@ -104,9 +105,9 @@
         }
 
         .back-link:hover {
-            background: var(--primary);
+            background: var(--primary-dark);
             color: #FFFFFF;
-            border-color: var(--primary);
+            border-color: var(--primary-dark);
         }
 
         /* Main Hero Hook */
@@ -134,7 +135,7 @@
             letter-spacing: -0.02em;
         }
 
-        .offer-title span { color: #F59E0B; }
+        .offer-title span { color: #DC2626; }
 
         .offer-desc {
             font-size: 1.05rem;
@@ -213,7 +214,7 @@
             letter-spacing: -0.01em;
         }
 
-        .section-title i { color: #F59E0B; }
+        .section-title i { color: #DC2626; }
 
         /* Numbers Grid */
         .numbers-grid {
@@ -342,70 +343,6 @@
             font-size: 0.84rem;
             color: var(--text-muted);
             line-height: 1.5;
-        }
-
-        /* Calculator Box */
-        .calculator-box {
-            background: #F8FAFC;
-            border: 1.5px solid var(--border);
-            border-radius: 14px;
-            padding: 22px;
-            margin-top: 20px;
-        }
-
-        .calc-title {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-        }
-
-        .calc-slider-wrap {
-            margin-bottom: 16px;
-        }
-
-        .calc-label-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 6px;
-        }
-
-        .calc-slider {
-            width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: #CBD5E1;
-            outline: none;
-            accent-color: #059669;
-        }
-
-        .calc-result-card {
-            background: #ECFDF5;
-            border: 1px solid rgba(5, 150, 105, 0.3);
-            border-radius: 10px;
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .calc-result-left span {
-            display: block;
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #047857;
-            text-transform: uppercase;
-        }
-
-        .calc-result-left strong {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #064E3B;
         }
 
         /* Financial Split */
@@ -563,7 +500,7 @@
             padding: 32px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
             color: #FFFFFF;
-            margin-bottom: 32px;
+            margin-top: 24px;
         }
 
         .dev-profile-header {
@@ -573,31 +510,31 @@
             margin-bottom: 20px;
         }
 
-        .dev-avatar-wrap {
+        .dev-profile-avatar-wrap {
             position: relative;
             flex-shrink: 0;
         }
 
-        .dev-avatar-img {
+        .dev-profile-avatar {
             width: 84px;
             height: 84px;
             border-radius: 12px;
-            border: 2px solid #059669;
-            box-shadow: 0 0 12px rgba(5, 150, 105, 0.4);
             object-fit: cover;
+            border: 2px solid #059669;
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+            display: block;
         }
 
-        .dev-badge-role {
+        .dev-profile-tag {
             font-size: 0.72rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             color: #10B981;
-            display: block;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
-        .dev-name {
+        .dev-profile-name {
             font-family: var(--font-heading);
             font-size: 1.45rem;
             font-weight: 900;
@@ -605,14 +542,14 @@
             line-height: 1.2;
         }
 
-        .dev-role-desc {
+        .dev-profile-role {
             font-size: 0.88rem;
             color: #E2E8F0;
             font-weight: 600;
             margin-top: 2px;
         }
 
-        .dev-location {
+        .dev-profile-city {
             font-size: 0.78rem;
             color: #94A3B8;
             display: flex;
@@ -621,7 +558,7 @@
             margin-top: 4px;
         }
 
-        .dev-manifesto-quote {
+        .dev-profile-bio {
             background: rgba(255, 255, 255, 0.04);
             border-left: 3px solid #059669;
             border-radius: 0 8px 8px 0;
@@ -643,67 +580,76 @@
         .dev-link-pill {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 10px;
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 10px;
-            padding: 10px 14px;
-            color: #E2E8F0;
+            padding: 12px 16px;
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             transition: all 0.2s ease;
         }
 
         .dev-link-pill:hover {
             background: rgba(255, 255, 255, 0.12);
-            border-color: #059669;
-            color: #FFFFFF;
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
         }
 
-        .dev-link-left {
+        .dev-link-icon-box {
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
         }
 
-        .dev-studio-signature {
+        .dev-link-pill span {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dev-link-ext {
+            width: 16px;
+            height: 16px;
+            color: #94A3B8;
+            flex-shrink: 0;
+        }
+
+        .studio-signature-box {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            padding-top: 22px;
+            text-align: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 16px;
+            gap: 8px;
         }
 
-        .dev-studio-logo {
-            height: 40px;
-            max-width: 200px;
+        .studio-logo-img {
+            height: 44px;
+            width: auto;
+            max-width: 240px;
             object-fit: contain;
+            opacity: 1;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
         }
 
-        .dev-studio-info {
-            text-align: right;
-        }
-
-        .dev-studio-tag {
+        .studio-motto {
             font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
             color: #CBD5E1;
+            letter-spacing: 1.2px;
             font-weight: 800;
-            display: block;
+            text-transform: uppercase;
         }
 
-        .dev-studio-loc {
+        .studio-location {
             font-size: 0.75rem;
             color: #64748B;
-        }
-
-        .proposal-external-footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 32px 0 24px 0;
         }
 
         /* Floating WhatsApp Button */
@@ -711,322 +657,293 @@
             position: fixed;
             bottom: 24px;
             right: 24px;
-            z-index: 9999;
             background: #25D366;
-            color: #0B0B0C;
-            text-decoration: none;
-            padding: 12px 20px;
+            color: #FFFFFF;
+            padding: 12px 22px;
             border-radius: 9999px;
             display: flex;
             align-items: center;
             gap: 8px;
-            font-family: var(--font-heading);
+            font-family: inherit;
             font-size: 0.92rem;
-            font-weight: 900;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-            animation: waPulse 2.5s infinite;
-            transition: all 0.2s ease;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: waPulse 2.5s infinite ease-in-out;
         }
 
         .floating-whatsapp-btn:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
             background: #20BA5A;
+            color: #FFFFFF;
         }
 
         @keyframes waPulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-            70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0%, 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45); }
+            50% { box-shadow: 0 8px 35px rgba(37, 211, 102, 0.75); }
         }
+
+        .back-text-short { display: none; }
 
         @media (max-width: 640px) {
             .offer-title { font-size: 1.75rem; }
-            .domain-strip { flex-direction: column; text-align: center; }
-            .domain-price { text-align: center; }
-            .numbers-grid, .benchmark-grid, .feature-grid, .financial-split, .dev-links-grid { grid-template-columns: 1fr; }
-            .dev-profile-header { flex-direction: column; text-align: center; }
-            .dev-studio-signature { flex-direction: column; text-align: center; }
-            .dev-studio-info { text-align: center; }
-            .floating-whatsapp-btn { bottom: 16px; right: 16px; padding: 10px 16px; font-size: 0.85rem; }
+            .brand-logo-img { height: 28px; max-width: 130px; }
+            .back-link { padding: 6px 10px; font-size: 0.78rem; gap: 4px; }
+            .back-text-full { display: none; }
+            .back-text-short { display: inline; }
+            .domain-strip { flex-direction: column; align-items: flex-start; }
+            .domain-price { text-align: left; }
+            .feature-grid, .financial-split, .numbers-grid, .benchmark-grid { grid-template-columns: 1fr; }
+            .dev-profile-card { padding: 22px 16px; border-radius: 14px; }
+            .dev-profile-header { flex-direction: column; text-align: center; gap: 12px; }
+            .dev-profile-avatar { width: 72px; height: 72px; }
+            .dev-profile-city { justify-content: center; }
+            .dev-profile-bio { font-size: 0.86rem; padding: 12px 14px; }
+            .dev-links-grid { grid-template-columns: 1fr; gap: 8px; }
+            .dev-link-pill { padding: 10px 12px; font-size: 0.80rem; }
+            .studio-signature-box { padding-top: 16px; }
+            .studio-logo-img { height: 36px; }
+            .floating-whatsapp-btn {
+                bottom: 14px;
+                right: 14px;
+                padding: 10px 16px;
+                font-size: 0.84rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Nav -->
-    <header class="proposal-nav">
+    <!-- Header Nav -->
+    <nav class="proposal-nav">
         <div class="container nav-wrapper">
-            <a href="index.html" class="brand-logo-link">
-                <img src="assets/logo_horizontal.svg" alt="Botequim Pantera" class="brand-logo-img" onerror="this.onerror=null;this.src='assets/logo.svg';">
+            <a href="index.html" class="brand-logo-link" aria-label="Voltar para a demonstração do site">
+                <img src="assets/logo_horizontal.svg" alt="Botequim Pantera Logo" class="brand-logo-img" onerror="this.onerror=null;this.src='assets/logo_botequim_pantera.png';">
             </a>
             <a href="index.html" class="back-link">
                 <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
-                <span>Ver Demonstração do Site</span>
+                <span class="back-text-full">Ver Site de Demonstração</span>
+                <span class="back-text-short">Ver Site</span>
             </a>
         </div>
-    </header>
+    </nav>
 
-    <main class="container">
-        
-        <!-- Hero da Proposta -->
+    <main class="container" style="padding-bottom: 96px;">
+
+        <!-- Main Hero Hook -->
         <section class="offer-hero">
             <div class="offer-card-main">
-                <h1 class="offer-title">Canal Próprio &amp; Cardápio Digital <span>Botequim Pantera</span></h1>
-                <p class="offer-desc">
-                    Uma plataforma moderna, ultra-rápida e sem comissões intermediárias por pedido, projetada para reter 100% da margem dos clientes que já conhecem a casa e compram toda semana.
-                </p>
+                <h1 class="offer-title">O Canal Digital Direto do <span>Botequim Pantera</span></h1>
+                <p class="offer-desc">Um cardápio interativo e ultra-rápido para transformar frequentadores, pedidos de baurus no almoço e clientes fiéis do happy hour em vendas diretas pelo WhatsApp oficial: <strong>(54) 3419-6942</strong> — com posse total da sua audiência e 0% de comissões.</p>
             </div>
         </section>
 
-        <!-- Faixa de Domínio Oficial -->
+        <!-- Domínio Próprio Oficial -->
         <div class="domain-strip">
             <div>
-                <span class="domain-tag">Domínio Oficial Sugerido</span>
+                <span class="domain-tag">Domínio Próprio & Ativo Digital da Sua Marca</span>
                 <div class="domain-name">botequimpantera.com.br</div>
             </div>
             <div class="domain-price">
-                <strong>0% de Taxa por Pedido</strong>
-                <span>Seu canal direto no WhatsApp</span>
+                <strong>Incluso no Projeto</strong>
+                <span>Registro Oficial + Cloudflare SSL + CDN no RS</span>
             </div>
         </div>
 
-        <!-- Análise Consultiva de Mercado: Captação vs Retenção -->
-        <section class="section-card">
-            <h2 class="section-title">
-                <i data-lucide="trending-up"></i> A Estratégia de Canal Próprio no Delivery
-            </h2>
-
-            <div class="numbers-grid">
-                <div class="num-card">
-                    <div class="num-big">Topo de Funil</div>
-                    <div class="num-title">Marketplaces (ex: iFood)</div>
-                    <div class="num-text">
-                        Fundamentais para atrair quem ainda não conhece a casa. Cumprem papel essencial na descoberta de novos clientes na cidade.
-                    </div>
-                </div>
-
-                <div class="num-card">
-                    <div class="num-big" style="color:#D97706;">100% Margem Limpa</div>
-                    <div class="num-title">Canal Próprio Onira.fly</div>
-                    <div class="num-text">
-                        A ferramenta de retenção definitiva: quem já frequenta a Rua Tronca pede no seu link direto. Todo o valor do prato fica no seu caixa.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Benchmark Comparativo -->
-            <div class="benchmark-box">
-                <div class="benchmark-header">
-                    <i data-lucide="zap" style="width:18px;height:18px;color:#059669;"></i>
-                    <span>Comparativo de Eficiência Operacional</span>
-                </div>
-                <p class="benchmark-desc">
-                    Tempo médio de abertura e checkout para o cliente que quer pedir rapidamente pelo celular:
-                </p>
-
-                <div class="benchmark-grid">
-                    <div class="benchmark-mini-card">
-                        <small>Abertura do Site</small>
-                        <strong style="color:#059669;">&lt; 1 segundo</strong>
-                    </div>
-                    <div class="benchmark-mini-card">
-                        <small>Taxa por Pedido</small>
-                        <strong style="color:#059669;">R$ 0,00 (Zero)</strong>
-                    </div>
-                    <div class="benchmark-mini-card">
-                        <small>Formato da Comanda</small>
-                        <strong style="color:#059669;">WhatsApp Limpo</strong>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Calculadora Interativa de Economia -->
-            <div class="calculator-box">
-                <h3 class="calc-title">Simulador de Retenção de Margem</h3>
-                <div class="calc-slider-wrap">
-                    <div class="calc-label-row">
-                        <span>Faturamento Mensal Estimado no Delivery:</span>
-                        <span id="calc-sales-val" style="color:#059669; font-weight:800;">R$ 30.000,00</span>
-                    </div>
-                    <input type="range" min="10000" max="100000" step="5000" value="30000" class="calc-slider" id="calc-range" oninput="calcularEconomia()">
-                </div>
-
-                <div class="calc-result-card">
-                    <div class="calc-result-left">
-                        <span>Economia Anual com Canal Próprio (Média 23% iFood):</span>
-                        <strong id="calc-savings-year">R$ 82.800,00 / ano</strong>
-                    </div>
-                    <i data-lucide="shield-check" style="width:28px;height:28px;color:#059669;"></i>
-                </div>
-            </div>
-        </section>
-
-        <!-- O que está incluso no Projeto -->
-        <section class="section-card">
-            <h2 class="section-title">
-                <i data-lucide="check-circle-2"></i> O que Entregamos Pronto para Operar
-            </h2>
-
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <h4><i data-lucide="layout"></i> Cardápio Digital Completo</h4>
-                    <p>Mais de 35 itens com fotos em alta definição, ponto da carne selecionável nos baurus, opções de porções e adicionais da casa.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h4><i data-lucide="message-circle"></i> Comanda Limpa no WhatsApp</h4>
-                    <p>Pedidos chegam no WhatsApp oficial (54 3419-6942) organizados item a item, prontos para a chapa e expedição sem retrabalho.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h4><i data-lucide="map-pin"></i> Cálculo de Tele por Bairro</h4>
-                    <p>Taxas automáticas por bairro em Caxias do Sul (Exposição, Centro, Lourdes, Panazzolo, etc.) somadas diretamente no total.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h4><i data-lucide="shield"></i> Painel do Dono com PIN</h4>
-                    <p>Interface protegida por senha ou biometria para pausar pratos esgotados, alterar preços e criar novos itens em segundos.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h4><i data-lucide="globe"></i> Domínio Próprio &amp; SSL</h4>
-                    <p>Site configurado em nuvem ultra-rápida (Cloudflare Pages) com certificado de segurança HTTPS e carregamento instantâneo.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h4><i data-lucide="smartphone"></i> App PWA Instalável</h4>
-                    <p>O cliente pode salvar o ícone do Botequim Pantera direto na tela inicial do celular como um aplicativo nativo.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Investimento & Condições Oficiais -->
-        <section class="section-card">
-            <h2 class="section-title">
-                <i data-lucide="dollar-sign"></i> Investimento &amp; Condições Oficiais
-            </h2>
+        <!-- Investimento & Condições (Posicionado em Destaque no Início) -->
+        <section class="section-card" id="investimento">
+            <h2 class="section-title"><i data-lucide="badge-dollar-sign"></i> Investimento & Condições</h2>
 
             <div class="financial-split">
-                <!-- Caixa Principal -->
+                <!-- Oferta Principal -->
                 <div class="fin-box-main">
-                    <span class="fin-label">Setup &amp; Implementação Completa</span>
+                    <span class="fin-label">⭐ Oferta Principal • Canal Onira.fly</span>
                     <div class="fin-total">3x de R$ 800,00</div>
                     <div class="fin-item">
-                        <strong>À vista no Pix:</strong> R$ 2.400,00 (ou em até 3x sem juros no cartão/boleto).
+                        💵 <strong>Implementação & Setup:</strong> R$ 2.400,00 à vista (Pix) ou parcelado em 3x de R$ 800,00 sem juros.
                     </div>
                     <div class="fin-item">
-                        <strong>Entrega Rápida:</strong> Site no ar e homologado em até 48 horas.
-                    </div>
-                    <div class="fin-item">
-                        <strong>Nuvem &amp; Suporte Contínuo:</strong> Apenas R$ 100,00/mês para hospedagem de alta velocidade, certificado SSL, domínio e manutenção contínua de cardápio e preços.
+                        ⚡ <strong>Acompanhamento Mensal & Nuvem:</strong> R$ 120,00/mês — inclui infraestrutura Cloudflare, SSL, domínio próprio, hospedagem de alta velocidade e suporte contínuo para cardápio e preços.
                     </div>
                 </div>
 
-                <!-- Caixa Upsell SEO -->
+                <!-- Upsell Enxuto -->
                 <div class="fin-box-upsell">
-                    <span class="upsell-tag">Opcional • Crescimento Local</span>
-                    <div class="upsell-total">+ R$ 100/mês</div>
+                    <span class="upsell-tag">🚀 Acelerador Local</span>
+                    <span class="fin-label" style="color: #7E22CE;">Google Meu Negócio & SEO</span>
+                    <div class="upsell-total">+ R$ 100/mês <small style="font-size:0.75rem; color:#6B21A8; display:block; font-weight:600;">(nos 3 primeiros meses)</small></div>
                     <ul class="upsell-list">
-                        <li><i data-lucide="check"></i> Otimização Google Meu Negócio</li>
-                        <li><i data-lucide="check"></i> SEO para buscas "Bauru Caxias", "Botequim Tronca"</li>
-                        <li><i data-lucide="check"></i> Rastreamento de avaliações 5 estrelas</li>
+                        <li><i data-lucide="check-circle-2" style="width:16px; height:16px;"></i> Otimização completa da ficha no Google Maps.</li>
+                        <li><i data-lucide="check-circle-2" style="width:16px; height:16px;"></i> Posicionamento para termos como "Bauru Caxiense" e "Melhor Comida Caseira Caxias do Sul".</li>
+                        <li><i data-lucide="check-circle-2" style="width:16px; height:16px;"></i> Link direto do canal oficial na vitrine de buscas locais.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Card de Chamada para Fechamento -->
-        <div class="cta-box">
-            <div class="cta-hook-badge">
-                <i data-lucide="sparkles" style="width:12px;height:12px;"></i> Projeto Pronto para Publicação
-            </div>
-            <h3>Vamos colocar o canal próprio do Botequim Pantera no ar hoje?</h3>
-            <p>
-                O protótipo com o cardápio oficial, fotos e cálculo de taxas para Caxias do Sul já está montado e pronto para apontar no domínio oficial da casa.
-            </p>
-            <a href="https://wa.me/5554996862169?text=Ol%C3%A1%20Jefferson%2C%20vi%20a%20proposta%20do%20Botequim%20Pantera%20e%20gostaria%20de%20conversar%20sobre%20o%20site%20e%20canal%20pr%C3%B3prio." target="_blank" class="btn-wa-action" rel="noopener noreferrer">
-                <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
-                <span>Falar com o Jefferson no WhatsApp</span>
-            </a>
-        </div>
+        <!-- O Tamanho da Oportunidade & Audiência -->
+        <section class="section-card">
+            <h2 class="section-title"><i data-lucide="trending-up"></i> O Tamanho da Oportunidade</h2>
 
-        <!-- Dev Profile Card (Onira Labs Master Standard) -->
-        <section class="dev-profile-card">
-            <div class="dev-profile-header">
-                <div class="dev-avatar-wrap">
-                    <img src="assets/jeff-avatar.webp" alt="Jefferson Motta - Onira Labs" class="dev-avatar-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80';">
+            <div class="numbers-grid">
+                <div class="num-card">
+                    <div class="num-big">100% Próprio</div>
+                    <div class="num-title">Posse da Sua Audiência</div>
+                    <div class="num-text">Sua marca no domínio oficial <code>botequimpantera.com.br</code>. O cliente pede focado exclusivamente nos baurus, à la minutas e chopps da casa, sem branding de concorrentes.</div>
                 </div>
-                <div>
-                    <span class="dev-badge-role">SERVICE DESIGN &amp; AI BUSINESS INTELLIGENCE</span>
-                    <h3 class="dev-name">Jefferson Motta</h3>
-                    <p class="dev-role-desc">Service Designer e A.I Business Intelligence na Onira Labs</p>
-                    <div class="dev-location">
-                        <i data-lucide="map-pin" style="width:13px;height:13px;color:#10B981;"></i>
-                        <span>Caxias do Sul - Serra Gaúcha</span>
-                    </div>
+
+                <div class="num-card">
+                    <div class="num-big">0% de Comissão</div>
+                    <div class="num-title">Margem Preservada na Recorrência</div>
+                    <div class="num-text">Plataformas de terceiros são importantes para atração de topo de funil. Mas nas recompras de quem já ama o Pantera, o canal próprio retém 100% do lucro no seu caixa.</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-big">4.9★ Estrelas</div>
+                    <div class="num-title">Demanda Consolidada na Serra</div>
+                    <div class="num-text">Mais de 700 avaliações no Google Maps e a premiação de <strong>Melhor Comida Caseira 2024 (Sabores do Sul)</strong> comprovam a alta autoridade do Pantera na Rua Tronca.</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-big">2 Toques</div>
+                    <div class="num-title">Montagem Ágil de Pedidos</div>
+                    <div class="num-text">O cliente escolhe o ponto da carne, tamanho da porção e adicionais em menos de 1 minuto, enviando a comanda limpa e estruturada no WhatsApp.</div>
                 </div>
             </div>
 
-            <div class="dev-manifesto-quote">
-                &ldquo;Nosso propósito com o Onira.fly é devolver a autonomia para os negócios gastronômicos locais: o cliente visualiza o cardápio em menos de 1 segundo, monta o pedido em 2 toques e envia direto no WhatsApp oficial. Zero burocracia para quem compra e lucro total no caixa de quem produz.&rdquo;
-            </div>
-
-            <div class="dev-links-grid">
-                <a href="https://www.linkedin.com/in/jeff-motta" target="_blank" class="dev-link-pill" rel="noopener noreferrer">
-                    <div class="dev-link-left">
-                        <i data-lucide="linkedin" style="width:18px;height:18px;color:#0A66C2;"></i>
-                        <span>LinkedIn: <strong>/in/jeff-motta</strong></span>
+            <!-- Simulação / Benchmark de Mercado -->
+            <div class="benchmark-box">
+                <div class="benchmark-header">
+                    <i data-lucide="calculator" style="color: #059669; width: 22px; height: 22px;"></i>
+                    <span>Referência de Mercado: Retenção de Margem & Lucro no Setor</span>
+                </div>
+                <p class="benchmark-desc">
+                    No segmento de botecos e comida caseira tradicional, o ticket médio por pedido gira em torno de <strong>R$ 75,00</strong>. Em plataformas com comissão de <strong>20% a 23%</strong>, a cada <strong>100 pedidos recorrentes</strong> a operação deixa milhares de reais em taxas. Veja a comparação direta:
+                </p>
+                <div class="benchmark-grid">
+                    <div class="benchmark-mini-card">
+                        <small>Fica no caixa em app de terceiro (100 pedidos)</small>
+                        <strong style="color: #64748B;">R$ 5.775,00</strong>
                     </div>
-                    <i data-lucide="external-link" style="width:14px;height:14px;color:#94A3B8;"></i>
-                </a>
-
-                <a href="https://jeffmotta.framer.website" target="_blank" class="dev-link-pill" rel="noopener noreferrer">
-                    <div class="dev-link-left">
-                        <i data-lucide="globe" style="width:18px;height:18px;color:#F59E0B;"></i>
-                        <span>Portfólio: <strong>jeffmotta.framer.website</strong></span>
+                    <div class="benchmark-mini-card">
+                        <small>Fica no caixa no canal próprio Onira.fly</small>
+                        <strong style="color: #059669;">R$ 7.500,00</strong>
                     </div>
-                    <i data-lucide="external-link" style="width:14px;height:14px;color:#94A3B8;"></i>
-                </a>
-            </div>
-
-            <div class="dev-studio-signature">
-                <img src="assets/logo_onira_branco.png" alt="Onira Labs" class="dev-studio-logo" onerror="this.style.display='none';">
-                <div class="dev-studio-info">
-                    <span class="dev-studio-tag">ONIRA.FLY • HIGH CONVERSION DIGITAL CHANNELS</span>
-                    <span class="dev-studio-loc">Caxias do Sul - Serra Gaúcha • Brasil</span>
+                    <div class="benchmark-mini-card">
+                        <small>Margem limpa extra retida todo mês</small>
+                        <strong style="color: #0F172A;">+ R$ 1.725,00</strong>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <p class="proposal-external-footer">
-            Proposta comercial elaborada por <strong>Onira Labs</strong> • Soluções Web &amp; Inteligência de Negócios
-        </p>
+        <!-- O Que Está Incluído -->
+        <section class="section-card">
+            <h2 class="section-title"><i data-lucide="layers"></i> O Que Está Incluído</h2>
+
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h4><i data-lucide="utensils"></i> Cardápio Interativo Completo</h4>
+                    <p>35 opções de Baurus Caxienses ao prato, à la minutas premiadas, bolinhos de costela 12h, tábuas de petiscos, chopps artesanais e sobremesas com fotos e seleção de ponto da carne.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i data-lucide="globe"></i> Domínio Oficial da Marca</h4>
+                    <p>Registro oficial <code>botequimpantera.com.br</code> sob a titularidade dos proprietários, transmitindo autoridade e profissionalismo em todas as redes sociais.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i data-lucide="message-square"></i> Comanda Limpa no WhatsApp</h4>
+                    <p>Pedidos chegam perfeitamente formatados no WhatsApp oficial <code>(54) 3419-6942</code>, com itens em negrito, ponto da carne, adicionais e endereço prontos para a chapa.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i data-lucide="truck"></i> Tele-Entrega & Retirada no Balcão</h4>
+                    <p>Tabela inteligente de taxas por bairro de Caxias do Sul (Exposição, Centro, São Pelegrino, Lourdes, Panazzolo, etc.) com cálculo automático instantâneo.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i data-lucide="zap"></i> Carregamento em menos de 0.5s</h4>
+                    <p>Arquitetura Jamstack ultra leve na Edge CDN que abre instantaneamente no Instagram ou no WhatsApp do cliente sem travar e sem exigir download de app.</p>
+                </div>
+                <div class="feature-box">
+                    <h4><i data-lucide="refresh-cw"></i> Painel do Dono & Suporte White-Glove</h4>
+                    <p>Autonomia total para o dono pausar pratos esgotados e alterar preços em tempo real com PIN/TouchID, somado ao suporte contínuo da Onira Labs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer & Studio Profile Container (Onira Labs Master Standard) -->
+        <div class="dev-profile-card">
+            <div class="dev-profile-header">
+                <div class="dev-profile-avatar-wrap">
+                    <img src="assets/jeff-avatar.webp" alt="Jefferson Motta" class="dev-profile-avatar" onerror="this.src='../../assets/jeff-avatar.webp'">
+                </div>
+                <div class="dev-profile-main-info">
+                    <div class="dev-profile-tag">SERVICE DESIGN & AI BUSINESS INTELLIGENCE</div>
+                    <h3 class="dev-profile-name">Jefferson Motta</h3>
+                    <p class="dev-profile-role">Service Designer e A.I Business Intelligence na Onira Labs</p>
+                    <p class="dev-profile-city">
+                        <i data-lucide="map-pin" style="width: 14px; height: 14px; color: #10B981;"></i>
+                        Caxias do Sul - Serra Gaúcha
+                    </p>
+                </div>
+            </div>
+
+            <!-- Citação do Manifesto Onira.fly -->
+            <div class="dev-profile-bio">
+                "Nosso propósito com o Onira.fly é devolver a autonomia para os negócios gastronômicos locais: o cliente visualiza o cardápio em menos de 1 segundo, monta o pedido em 2 toques e envia direto no WhatsApp oficial. Zero burocracia para quem compra e lucro total no caixa de quem produz."
+            </div>
+
+            <!-- Botões Sociais com Ícones Oficiais -->
+            <div class="dev-links-grid">
+                <a href="https://www.linkedin.com/in/jeff-motta" target="_blank" rel="noopener noreferrer" class="dev-link-pill">
+                    <div class="dev-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.67 1.67 0 0 0 1.67-1.66A1.66 1.66 0 0 0 7.83 6.2Z"/>
+                        </svg>
+                    </div>
+                    <span>LinkedIn: <strong>/in/jeff-motta</strong></span>
+                    <i data-lucide="external-link" class="dev-link-ext"></i>
+                </a>
+                <a href="https://jeffmotta.framer.website" target="_blank" rel="noopener noreferrer" class="dev-link-pill">
+                    <div class="dev-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <span>Portfólio: <strong>jeffmotta.framer.website</strong></span>
+                    <i data-lucide="external-link" class="dev-link-ext"></i>
+                </a>
+            </div>
+
+            <!-- Assinatura Onira Labs Ampliada com Alta Legibilidade -->
+            <div class="studio-signature-box">
+                <img src="assets/logo_onira_branco.png" alt="Onira Labs" class="studio-logo-img" onerror="this.src='../../logo_onira_branco.png'">
+                <div class="studio-motto">ONIRA.FLY • HIGH CONVERSION DIGITAL CHANNELS</div>
+                <div class="studio-location">Caxias do Sul - Serra Gaúcha • Brasil</div>
+            </div>
+        </div>
+
+        <!-- Developer Signature -->
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 28px; margin-bottom: 24px;">
+            <p>Proposta comercial elaborada por <strong>Onira Labs</strong> • Engenharia de Negócios Digitais</p>
+        </div>
 
     </main>
 
-    <!-- Floating WhatsApp CTA -->
-    <a href="https://wa.me/5554996862169?text=Ol%C3%A1%20Jefferson%2C%20vi%20a%20proposta%20do%20Botequim%20Pantera%20e%20gostaria%20de%20conversar%20sobre%20o%20site%20e%20canal%20pr%C3%B3prio." target="_blank" class="floating-whatsapp-btn" rel="noopener noreferrer">
-        <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/5554996862169?text=Ol%C3%A1%20Jefferson!%20Vi%20a%20proposta%20do%20canal%20pr%C3%B3prio%20do%20Botequim%20Pantera%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="floating-whatsapp-btn" aria-label="Falar com Jefferson no WhatsApp">
+        <i data-lucide="message-circle"></i>
         <span>Falar com o Jefferson</span>
     </a>
 
     <script>
-        lucide.createIcons();
-
-        function calcularEconomia() {
-            const range = document.getElementById('calc-range');
-            const salesValEl = document.getElementById('calc-sales-val');
-            const savingsYearEl = document.getElementById('calc-savings-year');
-
-            const faturamento = parseFloat(range.value);
-            salesValEl.innerText = `R$ ${faturamento.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-
-            // Média de 23% de taxa marketplace
-            const economiaMes = faturamento * 0.23;
-            const economiaAno = economiaMes * 12;
-
-            savingsYearEl.innerText = `R$ ${economiaAno.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} / ano`;
+        if (window.lucide) {
+            lucide.createIcons();
         }
     </script>
+
 </body>
 </html>

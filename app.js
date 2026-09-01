@@ -31,7 +31,7 @@ const DELIVERY_ZONES = [
     { neighborhood: 'Outro Bairro (Caxias do Sul)', fee: 15.00, time: '40-60 min' }
 ];
 
-// Catálogo Oficial do Botequim Pantera (Real de Caxias do Sul)
+// Catálogo Oficial do Botequim Pantera com Imagens Reais e Apetitosas
 const DEFAULT_PRODUCTS = [
     // --- BAURUS CAXIENSES (DESTAQUES) ---
     {
@@ -630,7 +630,7 @@ function getFilteredProducts() {
     });
 }
 
-// Renderizar Catálogo de Produtos
+// Renderizar Catálogo de Produtos com CTAs Convidativos
 function renderCatalog() {
     const grid = document.getElementById('catalog-grid');
     if (!grid) return;
@@ -674,14 +674,14 @@ function renderCatalog() {
                     </div>
 
                     ${p.hasAdicionais ? `
-                        <button type="button" class="btn-add-action btn-options" onclick="window.openProductModal('${p.id}')" aria-label="Personalizar ${p.name}">
-                            <i data-lucide="sliders" style="width:16px;height:16px;"></i>
-                            <span>Opções</span>
+                        <button type="button" class="btn-add-action btn-options" onclick="window.openProductModal('${p.id}')" aria-label="Escolher acompanhamentos para ${p.name}">
+                            <i data-lucide="sliders" style="width:15px;height:15px;"></i>
+                            <span>Escolher Acompanhamentos</span>
                         </button>
                     ` : `
-                        <button type="button" class="btn-add-action" onclick="window.quickAddToCart('${p.id}')" aria-label="Adicionar ${p.name}">
-                            <i data-lucide="plus" style="width:16px;height:16px;"></i>
-                            <span>Pedir</span>
+                        <button type="button" class="btn-add-action" onclick="window.quickAddToCart('${p.id}')" aria-label="Adicionar ${p.name} ao pedido">
+                            <i data-lucide="plus" style="width:15px;height:15px;"></i>
+                            <span>+ Adicionar ao Pedido</span>
                         </button>
                     `}
                 </div>
@@ -1199,8 +1199,8 @@ window.selectDeliveryType = function(type) {
 window.selectPayment = function(method) {
     selectedPaymentMethod = method;
     const btnPix = document.getElementById('btn-pay-pix');
-    const btnCard = document.getElementById('btn-pay-card');
-    const btnCash = document.getElementById('btn-pay-cash');
+    const btnCard = document.getElementById('btn-pay-cartao');
+    const btnCash = document.getElementById('btn-pay-dinheiro');
     const cashBox = document.getElementById('cash-change-group');
 
     [btnPix, btnCard, btnCash].forEach(b => { if (b) b.classList.remove('active'); });
@@ -1341,8 +1341,6 @@ function checkBusinessStatus() {
 
     let isOpen = false;
     if (day >= 2 && day <= 6) { // Terça a Sábado
-        // Almoço: 11:30 (690) às 14:00 (840)
-        // Jantar: 18:30 (1110) às 22:45 (1365)
         if ((timeInMinutes >= 690 && timeInMinutes <= 840) || (timeInMinutes >= 1110 && timeInMinutes <= 1365)) {
             isOpen = true;
         }

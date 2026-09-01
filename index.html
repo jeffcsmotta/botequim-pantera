@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Botequim Pantera | Bauru Caxiense Tradicional, Comida Caseira &amp; Chopp em Caxias do Sul</title>
     <meta name="description" content="🍺 Botequim Pantera — O tradicional Bauru Caxiense ao prato, à la minutas premiadas, porções generosas de boteco e chopp geladíssimo no Bairro Exposição em Caxias do Sul. Peça direto no WhatsApp!">
-    <meta name="theme-color" content="#DC2626">
+    <meta name="theme-color" content="#1F2937">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -22,12 +22,12 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20260901c">
+    <link rel="stylesheet" href="style.css?v=20260901d">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
-    <!-- Header Despoluído & Focado -->
+    <!-- Header Despoluído & Focado (Padrão Fafá Doces) -->
     <header class="site-header">
         <div class="container nav-container">
             <a href="index.html" class="brand-wrapper" aria-label="Página Inicial Botequim Pantera">
@@ -39,23 +39,18 @@
             <div class="nav-actions">
                 <div class="status-compact" id="header-status">
                     <span class="status-dot"></span>
-                    <span id="status-text-header">Aberto Hoje às 18h00 • Faça seu Pedido</span>
+                    <span id="status-text-header">Aberto Hoje • 11h30 às 22h30</span>
                 </div>
 
-                <!-- Botão Compre esse site (Azul Royal Elétrico de Alto Contraste - Sólido) -->
+                <!-- Botão Compre esse site (Azul Royal Elétrico de Alto Contraste) -->
                 <a href="proposta.html" class="btn-buy-site" title="Compre esse site pronto para o seu negócio">
                     <i data-lucide="zap" style="width:14px;height:14px;color:#FEF08A;fill:#FEF08A;"></i>
                     <span class="btn-buy-text">Compre este site</span>
                 </a>
 
-                <!-- Botão Lixeira no Cabeçalho (Outline) -->
-                <button type="button" class="btn-header-trash" id="btn-header-trash" onclick="window.clearCart()" title="Limpar Pedido" aria-label="Limpar Pedido">
-                    <i data-lucide="trash-2" style="width:16px;height:16px;"></i>
-                </button>
-
-                <!-- Botão Carrinho Desktop ("Pedido") / Mobile (Ícone) -->
+                <!-- Botão Carrinho Desktop ("Pedido") / Mobile (Ícone com Badge) -->
                 <button type="button" class="btn-cart-trigger" id="btn-cart-nav" onclick="window.openCart()" aria-label="Ver Carrinho de Compras">
-                    <i data-lucide="shopping-bag" style="width:18px;height:18px;"></i>
+                    <i data-lucide="shopping-bag" style="width:17px;height:17px;"></i>
                     <span class="cart-btn-label">Pedido</span>
                     <span class="cart-total-header" id="cart-total-nav">R$ 0,00</span>
                     <span class="cart-count-badge" id="cart-count">0</span>
@@ -376,21 +371,27 @@
         </div>
     </div>
 
-    <!-- Cart Drawer (Padrão Onira Master Dark Contrast) -->
+    <!-- Cart Overlay & Drawer (Padrão Fafá Doces / Onira Labs Master) -->
     <div class="cart-overlay" id="cart-overlay" onclick="window.closeCart()"></div>
     <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
-        <!-- Header da Gaveta -->
+        <!-- Header da Gaveta em 3 Colunas: Esquerda (Cardápio), Centro (Título), Direita (Lixeira) -->
         <div class="cart-header">
-            <button type="button" class="btn-continue-shopping" onclick="window.closeCart()">
-                <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
-                <span>Continuar Escolhendo</span>
+            <!-- Botão Cardápio à Esquerda (Modo Preenchido Branco Estático) -->
+            <button type="button" class="btn-continue-shopping" onclick="window.closeCart()" aria-label="Voltar para o Cardápio">
+                <i data-lucide="arrow-left" style="width:15px;height:15px;"></i>
+                <span>Cardápio</span>
             </button>
-            <div class="cart-header-title-box">
-                <h3 class="cart-header-title" id="cart-drawer-title">Seu Pedido</h3>
-                <button type="button" class="btn-drawer-trash" onclick="window.clearCart()" title="Limpar pedido">
-                    <i data-lucide="trash-2" style="width:16px;height:16px;"></i>
-                </button>
+
+            <!-- Título Centralizado -->
+            <div class="cart-header-title" id="cart-drawer-title">
+                <i data-lucide="shopping-bag" style="width:17px;height:17px;color:#10B981;"></i>
+                <span>Seu Pedido Pantera</span>
             </div>
+
+            <!-- Botão Lixeira Circular à Direita -->
+            <button type="button" class="btn-clear-cart-circle" onclick="window.clearCart()" title="Limpar pedido" aria-label="Limpar pedido">
+                <i data-lucide="trash-2" style="width:16px;height:16px;"></i>
+            </button>
         </div>
 
         <!-- Corpo com Rolagem Unificada -->
@@ -459,11 +460,11 @@
                             <i data-lucide="qr-code" style="width:16px;height:16px;"></i>
                             <span>Pix</span>
                         </button>
-                        <button type="button" class="pay-pill" id="btn-pay-card" onclick="window.selectPayment('cartao')">
+                        <button type="button" class="pay-pill" id="btn-pay-cartao" onclick="window.selectPayment('cartao')">
                             <i data-lucide="credit-card" style="width:16px;height:16px;"></i>
                             <span>Cartão</span>
                         </button>
-                        <button type="button" class="pay-pill" id="btn-pay-cash" onclick="window.selectPayment('dinheiro')">
+                        <button type="button" class="pay-pill" id="btn-pay-dinheiro" onclick="window.selectPayment('dinheiro')">
                             <i data-lucide="banknote" style="width:16px;height:16px;"></i>
                             <span>Dinheiro</span>
                         </button>
@@ -534,7 +535,7 @@
     </div>
 
     <!-- Script Application -->
-    <script src="app.js?v=20260901c"></script>
+    <script src="app.js?v=20260901d"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(err => console.log('SW falhou:', err));
