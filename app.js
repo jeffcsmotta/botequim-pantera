@@ -3,12 +3,13 @@
  * Cardápio Digital & Sistema de Pedidos Direto no WhatsApp
  * Bauru Caxiense Tradicional, Comida Caseira & Chopp Geladíssimo
  * Destaque Sabores do Sul 2024 (Melhor Comida Caseira)
- * Powered by Onira Labs
+ * Powered by Onira Labs - Design System Master v2
  */
 
 // WhatsApp Oficial do Botequim Pantera (Rua Tronca, 1879 - Bairro Exposição)
 const WHATSAPP_PHONE = '555434196942';
 const CHAVE_PIX_OFICIAL = '5434196942';
+const CATALOG_STORAGE_KEY = 'pantera_catalog_v20260901_v3';
 
 // Taxas de Entrega por Bairro em Caxias do Sul
 const DELIVERY_ZONES = [
@@ -31,7 +32,7 @@ const DELIVERY_ZONES = [
     { neighborhood: 'Outro Bairro (Caxias do Sul)', fee: 15.00, time: '40-60 min' }
 ];
 
-// Catálogo Oficial do Botequim Pantera com Imagens Reais e Apetitosas
+// Catálogo Oficial do Botequim Pantera com 35 Pratos Reais e Fotos Únicas
 const DEFAULT_PRODUCTS = [
     // --- BAURUS CAXIENSES (DESTAQUES) ---
     {
@@ -67,7 +68,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Prato executivo individual do clássico bauru caxiense: bife de filé na chapa com queijo derretido, arroz branco soltinho, feijão caseiro, ovo frito e fritas.",
         badge: "Mais Pedido no Almoço ⚡",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80",
         price: 38.90,
         hasAdicionais: true,
         options: {
@@ -86,7 +87,7 @@ const DEFAULT_PRODUCTS = [
         desc: "O bauru mais generoso do Pantera: corte nobre de filé mignon grelhado na chapa, queijo em dobro, presunto nobre, tiras de bacon crocante, 2 ovos e montanha de batatas fritas.",
         badge: "Rei da Casa 👑",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80",
         price: 59.90,
         hasAdicionais: true,
         options: {
@@ -128,7 +129,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Filé de peito de frango marinado em ervas finas e grelhado na chapa, coberto com Catupiry original, queijo colonial, presunto, ovo e batata frita.",
         badge: "Leve & Suculento ✨",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80",
         price: 42.90,
         hasAdicionais: true,
         options: {
@@ -148,7 +149,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Bife macio de filé mignon grelhado na chapa, arroz branco, feijão caseiro temperado no capricho, ovo estalado com gema mole, batata frita e salada mista.",
         badge: "Comida Caseira Premiada 🍳",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=700&q=80",
         price: 44.90,
         hasAdicionais: true,
         options: {
@@ -167,7 +168,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Filé mignon empanado em farinha especial e frito até dourar, servido com arroz soltinho, feijão caseiro, ovo frito, batata frita e salada fresca.",
         badge: "Super Crocante 🥩",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=700&q=80",
         price: 46.90,
         hasAdicionais: true,
         options: {
@@ -185,7 +186,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Filé mignon empanado e gratinado ao forno com molho de tomate rústico artesanal e queijo mussarela derretido. Acompanha arroz branco e batata frita.",
         badge: "Destaque do Menu 🏆",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=700&q=80",
         price: 52.90,
         hasAdicionais: true,
         options: {
@@ -247,7 +248,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Batata frita crocante e sequinha, coberta com queijo colonial derretido e cubos de bacon crocante.",
         badge: "Favorito do Chopp 🍟",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80",
         price: 32.90,
         hasAdicionais: true,
         options: {
@@ -354,7 +355,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Hambúrguer artesanal na chapa, queijo derretido, presunto, ovo, milho, ervilha, alface, tomate e maionese caseira prensado no pão de xis.",
         badge: "Clássico 🍔",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80",
         price: 29.90,
         hasAdicionais: false
     },
@@ -366,7 +367,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Tiras generosas de filé mignon na chapa, queijo colonial derretido, presunto, ovo, milho, ervilha, alface, tomate e maionese no pão de xis.",
         badge: "Filé Puro 🥩",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80",
         price: 36.90,
         hasAdicionais: false
     },
@@ -404,7 +405,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Garrafa 600ml servida com camisa térmica, estupidamente gelada.",
         badge: "Clássico de Boteco ❄️",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1608270116801-b258359b3ee4?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1584225064785-c62a8b43d148?auto=format&fit=crop&w=700&q=80",
         price: 15.00,
         hasAdicionais: false
     },
@@ -492,7 +493,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Lata 350ml sem açúcar gelada.",
         badge: "Zero Açúcar 🥤",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=700&q=80",
         price: 6.00,
         hasAdicionais: false
     },
@@ -504,7 +505,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Lata 350ml gelada.",
         badge: "Gelado 🍃",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=700&q=80",
         price: 6.00,
         hasAdicionais: false
     },
@@ -566,9 +567,9 @@ const DEFAULT_PRODUCTS = [
     }
 ];
 
-// Carregar catálogo (LocalStorage ou Default)
+// Carregar catálogo (com versionamento de cache para evitar dados antigos no cliente)
 function getProducts() {
-    const saved = localStorage.getItem('pantera_catalog');
+    const saved = localStorage.getItem(CATALOG_STORAGE_KEY);
     if (saved) {
         try {
             return JSON.parse(saved);
@@ -576,6 +577,8 @@ function getProducts() {
             console.error('Erro ao ler catálogo do localStorage:', e);
         }
     }
+    // Salva a versão fresca se ainda não existir
+    localStorage.setItem(CATALOG_STORAGE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
     return DEFAULT_PRODUCTS;
 }
 
