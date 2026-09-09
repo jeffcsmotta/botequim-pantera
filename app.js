@@ -43,7 +43,7 @@ const DEFAULT_PRODUCTS = [
         desc: "O consagrado de Caxias: filé mignon macio grelhado na chapa, queijo colonial derretido, presunto, ovo estalado com gema mole, alface, tomate e batatas fritas sequinhas e crocantes.",
         badge: "Campeão Sabores do Sul ⭐",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80",
         price: 49.90,
         hasAdicionais: true,
         options: {
@@ -68,7 +68,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Prato executivo individual do clássico bauru caxiense: bife de filé na chapa com queijo derretido, arroz branco soltinho, feijão caseiro, ovo frito e fritas.",
         badge: "Mais Pedido no Almoço ⚡",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=700&q=80",
         price: 38.90,
         hasAdicionais: true,
         options: {
@@ -87,7 +87,7 @@ const DEFAULT_PRODUCTS = [
         desc: "O bauru mais generoso do Pantera: corte nobre de filé mignon grelhado na chapa, queijo em dobro, presunto nobre, tiras de bacon crocante, 2 ovos e montanha de batatas fritas.",
         badge: "Rei da Casa 👑",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=700&q=80",
         price: 59.90,
         hasAdicionais: true,
         options: {
@@ -110,7 +110,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Suculento filé mignon coberto por uma fusão cremosa de Queijo Colonial da Serra, Provolone defumado, Gorgonzola e Catupiry legítimo. Acompanha fritas douradas.",
         badge: "Ultra Cremoso 🧀",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1582169296194-e4d644c48063?auto=format&fit=crop&w=700&q=80",
         price: 54.90,
         hasAdicionais: true,
         options: {
@@ -656,7 +656,7 @@ function renderCatalog() {
     grid.innerHTML = items.map(p => `
         <article class="product-card" data-id="${p.id}">
             <div class="card-img-wrapper" onclick="window.openProductModal('${p.id}')">
-                <img src="${p.img}" alt="${p.name}" class="product-img" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80';">
+                <img src="${p.img}" alt="${p.name}" class="product-img" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=600&q=80';">
                 ${p.badge ? `<span class="badge-tag">${p.badge}</span>` : ''}
                 <div class="rating-pill">
                     <i data-lucide="star" style="width:12px;height:12px;fill:#F59E0B;stroke:none;"></i>
@@ -1106,7 +1106,7 @@ function renderCartItemsList(subtotal) {
         const itemTotal = item.unitPrice * item.quantity;
         return `
             <div class="cart-item-card">
-                <img src="${item.img}" alt="${item.name}" class="cart-item-thumb" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80';">
+                <img src="${item.img}" alt="${item.name}" class="cart-item-thumb" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=200&q=80';">
                 
                 <div class="cart-item-details">
                     <div class="cart-item-header">
