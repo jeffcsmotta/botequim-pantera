@@ -43,7 +43,7 @@ const DEFAULT_PRODUCTS = [
         desc: "O consagrado de Caxias: filé mignon macio grelhado na chapa, queijo colonial derretido, presunto, ovo estalado com gema mole, alface, tomate e batatas fritas sequinhas e crocantes.",
         badge: "Campeão Sabores do Sul ⭐",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=80",
         price: 49.90,
         hasAdicionais: true,
         options: {
@@ -68,7 +68,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Prato executivo individual do clássico bauru caxiense: bife de filé na chapa com queijo derretido, arroz branco soltinho, feijão caseiro, ovo frito e fritas.",
         badge: "Mais Pedido no Almoço ⚡",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=700&q=80",
         price: 38.90,
         hasAdicionais: true,
         options: {
@@ -87,7 +87,7 @@ const DEFAULT_PRODUCTS = [
         desc: "O bauru mais generoso do Pantera: corte nobre de filé mignon grelhado na chapa, queijo em dobro, presunto nobre, tiras de bacon crocante, 2 ovos e montanha de batatas fritas.",
         badge: "Rei da Casa 👑",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=700&q=80",
         price: 59.90,
         hasAdicionais: true,
         options: {
@@ -110,7 +110,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Suculento filé mignon coberto por uma fusão cremosa de Queijo Colonial da Serra, Provolone defumado, Gorgonzola e Catupiry legítimo. Acompanha fritas douradas.",
         badge: "Ultra Cremoso 🧀",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
         price: 54.90,
         hasAdicionais: true,
         options: {
@@ -129,7 +129,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Filé de peito de frango marinado em ervas finas e grelhado na chapa, coberto com Catupiry original, queijo colonial, presunto, ovo e batata frita.",
         badge: "Leve & Suculento ✨",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=700&q=80",
         price: 42.90,
         hasAdicionais: true,
         options: {
@@ -149,7 +149,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Bife macio de filé mignon grelhado na chapa, arroz branco, feijão caseiro temperado no capricho, ovo estalado com gema mole, batata frita e salada mista.",
         badge: "Comida Caseira Premiada 🍳",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=700&q=80",
         price: 44.90,
         hasAdicionais: true,
         options: {
@@ -168,7 +168,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Filé mignon empanado em farinha especial e frito até dourar, servido com arroz soltinho, feijão caseiro, ovo frito, batata frita e salada fresca.",
         badge: "Super Crocante 🥩",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?auto=format&fit=crop&w=700&q=80",
         price: 46.90,
         hasAdicionais: true,
         options: {
@@ -186,7 +186,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Filé mignon empanado e gratinado ao forno com molho de tomate rústico artesanal e queijo mussarela derretido. Acompanha arroz branco e batata frita.",
         badge: "Destaque do Menu 🏆",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80",
         price: 52.90,
         hasAdicionais: true,
         options: {
@@ -204,7 +204,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Peito de frango grelhado na manteiga e ervas finas, servido com arroz branco, feijão, ovo estalado, batata frita e salada.",
         badge: "Prato Leve 🥗",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=700&q=80",
         price: 36.90,
         hasAdicionais: false
     },
@@ -218,7 +218,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Polenta artesanal crocante por fora e macia por dentro, finalizada com generosa camada de queijo colonial da Serra Gaúcha ralado na hora.",
         badge: "Tradição Gaúcha 🌽",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=700&q=80",
         price: 24.90,
         hasAdicionais: true,
         options: {
@@ -236,7 +236,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Costela assada lentamente por 12h, desfiada com temperos coloniais, empanada em farinha panko crocante. Acompanha geleia de pimenta defumada.",
         badge: "Destaque do Bar 🔥",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80",
         price: 34.90,
         hasAdicionais: false
     },
@@ -248,7 +248,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Batata frita crocante e sequinha, coberta com queijo colonial derretido e cubos de bacon crocante.",
         badge: "Favorito do Chopp 🍟",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80",
         price: 32.90,
         hasAdicionais: true,
         options: {
@@ -266,7 +266,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Porção generosa de batatas fritas palito, douradas e crocantes, salpicadas com sal e orégano.",
         badge: "Porção Família 🍟",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80",
         price: 22.90,
         hasAdicionais: false
     },
@@ -278,7 +278,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Feitos com tapioca granulada e queijo de coalho dourado, fritos com casquinha crocante e interior cremoso. Servidos com geleia de pimenta.",
         badge: "Crocante & Macio 🌶️",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?auto=format&fit=crop&w=700&q=80",
         price: 29.90,
         hasAdicionais: false
     },
@@ -302,7 +302,7 @@ const DEFAULT_PRODUCTS = [
         desc: "O banquete definitivo de boteco: iscas de filé mignon na chapa com cebola caramelizada, polenta frita crocante, batata frita com queijo e bacon, queijo provolone e pão francês fatiado.",
         badge: "Para Compartilhar 👑",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=700&q=80",
         price: 89.90,
         hasAdicionais: true,
         options: {
@@ -355,7 +355,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Hambúrguer artesanal na chapa, queijo derretido, presunto, ovo, milho, ervilha, alface, tomate e maionese caseira prensado no pão de xis.",
         badge: "Clássico 🍔",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=700&q=80",
         price: 29.90,
         hasAdicionais: false
     },
@@ -367,7 +367,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Tiras generosas de filé mignon na chapa, queijo colonial derretido, presunto, ovo, milho, ervilha, alface, tomate e maionese no pão de xis.",
         badge: "Filé Puro 🥩",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=700&q=80",
         price: 36.90,
         hasAdicionais: false
     },
@@ -381,7 +381,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Chopp regional da Serra Gaúcha, leve, refrescante e servido estupidamente gelado com colarinho cremoso perfeito.",
         badge: "Geladíssimo 🍺",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1608270116801-b258359b3ee4?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=700&q=80",
         price: 14.00,
         hasAdicionais: false
     },
@@ -393,7 +393,7 @@ const DEFAULT_PRODUCTS = [
         desc: "India Pale Ale aromática com notas cítricas de lúpulos nobres, amargor marcante e final equilibrado.",
         badge: "Artesanal Serra 🌿",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1584225064785-c62a8b43d148?auto=format&fit=crop&w=700&q=80",
         price: 17.00,
         hasAdicionais: false
     },
@@ -405,7 +405,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Garrafa 600ml servida com camisa térmica, estupidamente gelada.",
         badge: "Clássico de Boteco ❄️",
         rating: "4.8",
-        img: "https://images.unsplash.com/photo-1584225064785-c62a8b43d148?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=700&q=80",
         price: 15.00,
         hasAdicionais: false
     },
@@ -417,7 +417,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Cerveja Premium Lager puro malte, servida trincando de gelada.",
         badge: "Puro Malte 🟢",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1618886614638-80e3c15cd819?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?auto=format&fit=crop&w=700&q=80",
         price: 12.00,
         hasAdicionais: false
     },
@@ -443,7 +443,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Vodka premium, mix de morango, amora e framboesa frescas com folhas de hortelã maceradas.",
         badge: "Mais Pedida 🍓",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=700&q=80",
         price: 24.00,
         hasAdicionais: false
     },
@@ -455,7 +455,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Gin London Dry, polpa de maracujá fresco, rodela de laranja e Red Bull Tropical.",
         badge: "Refrescante 🍹",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=700&q=80",
         price: 28.00,
         hasAdicionais: false
     },
@@ -467,7 +467,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Vodka, suco de limão fresco e a famosa espuma artesanal de gengibre na caneca de cobre.",
         badge: "Na Caneca de Cobre 🧊",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=700&q=80",
         price: 26.00,
         hasAdicionais: false
     },
@@ -505,7 +505,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Lata 350ml gelada.",
         badge: "Gelado 🍃",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&fit=crop&w=700&q=80",
         price: 6.00,
         hasAdicionais: false
     },
@@ -517,7 +517,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Suco natural feito na hora (Laranja, Limonada Suíça ou Uva Integral da Serra).",
         badge: "100% Fruta 🍊",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80",
         price: 10.00,
         hasAdicionais: true,
         options: {
@@ -532,7 +532,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Garrafa 500ml gelada.",
         badge: "Mineral 💧",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=700&q=80",
         price: 4.50,
         hasAdicionais: true,
         options: {
@@ -549,7 +549,7 @@ const DEFAULT_PRODUCTS = [
         desc: "A clássica receita caseira: pudim de leite condensado aveludado, bem cremoso, com calda de caramelo dourada.",
         badge: "Receita de Família 🍮",
         rating: "5.0",
-        img: "https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80",
         price: 12.90,
         hasAdicionais: false
     },
@@ -561,7 +561,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Bolinho de chocolate com centro quente derretido, servido com bola de sorvete de baunilha e calda de chocolate.",
         badge: "Centro Quente 🍫",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80",
+        img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80",
         price: 21.90,
         hasAdicionais: false
     }
