@@ -9,7 +9,7 @@
 // WhatsApp Oficial do Botequim Pantera (Rua Tronca, 1879 - Bairro Exposição)
 const WHATSAPP_PHONE = '555434196942';
 const CHAVE_PIX_OFICIAL = '5434196942';
-const CATALOG_STORAGE_KEY = 'pantera_catalog_v20260911_v4';
+const CATALOG_STORAGE_KEY = 'pantera_catalog_v20260911_v5';
 
 // Taxas de Entrega por Bairro em Caxias do Sul
 const DELIVERY_ZONES = [
@@ -43,7 +43,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Serve 1 pessoa • Bauru individual de coxão mole com presunto e queijo ao molho de tomate. Acompanha arroz, fritas, salada mista e pães.",
         badge: "Campeão Sabores do Sul ⭐",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80",
+        img: "assets/produtos/bauru-individual.jpg",
         price: 78.00,
         hasAdicionais: true,
         options: {
@@ -67,7 +67,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Serve 2 pessoas • Meio bauru tradicional: coxão mole, presunto de primeira e queijo derretido no molho de tomate caseiro. Acompanha arroz branco, fritas, salada mista e pães.",
         badge: "Para Dividir 👥",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=700&q=80",
+        img: "assets/produtos/bauru-meio-tradicional.jpg",
         price: 162.00,
         hasAdicionais: true,
         options: {
@@ -85,7 +85,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Serve ~4 pessoas • Coxão mole, presunto e queijo no molho de tomate com verde, milho, ervilha e palmito. Acompanha arroz, fritas, salada mista e pães.",
         badge: "Rei da Casa 👑",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=700&q=80",
+        img: "assets/produtos/bauru-rei.jpg",
         price: 280.00,
         hasAdicionais: true,
         options: {
@@ -107,7 +107,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Serve ~4 pessoas • Abraçadinho inteiro sem presunto: coxão mole com queijo derretido no molho de tomate caseiro. Acompanha arroz, fritas, salada mista e pães frescos.",
         badge: "Para Compartilhar 👥",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1582169296194-e4d644c48063?auto=format&fit=crop&w=700&q=80",
+        img: "assets/produtos/abracadinho-inteiro.jpg",
         price: 255.00,
         hasAdicionais: true,
         options: {
@@ -125,7 +125,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Serve 2 pessoas • Meio abraçadinho sem presunto: coxão mole com queijo derretido no molho de tomate caseiro. Acompanha arroz, fritas, salada mista e pães.",
         badge: "Para Dividir 👥",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=700&q=80",
+        img: "assets/produtos/abracadinho-inteiro.jpg",
         price: 158.00,
         hasAdicionais: true,
         options: {
@@ -143,7 +143,7 @@ const DEFAULT_PRODUCTS = [
         desc: "Serve 1 pessoa • Ovos mexidos, queijo ao molho de tomate com verde, milho, ervilha e palmito. Acompanha arroz, fritas, salada mista e pães.",
         badge: "Vegetariano 🌱",
         rating: "4.9",
-        img: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
+        img: "assets/produtos/vegetariano.jpg",
         price: 63.00,
         hasAdicionais: true,
         options: {
@@ -153,18 +153,114 @@ const DEFAULT_PRODUCTS = [
             ]
         }
     },
+    {
+        id: "pantera-037",
+        name: "Bauru Tradicional Inteiro (Serve ~4 Pessoas)",
+        category: "baurus",
+        group: "Baurus Caxienses",
+        desc: "Serve 4 pessoas • Coxão mole, presunto e queijo no molho de tomate. Acompanha arroz e salada mista.",
+        badge: "Para Compartilhar 👥",
+        rating: "4.9",
+        img: "assets/produtos/tradicional-inteiro.jpg",
+        price: 265.00,
+        hasAdicionais: true,
+        options: {
+            addons: [
+                { name: "Molho Vermelho da Casa", price: 4.00 },
+                { name: "Queijo Colonial Extra", price: 6.00 }
+            ]
+        }
+    },
+    {
+        id: "pantera-038",
+        name: "Bauru Rei ao Prato (Individual)",
+        category: "baurus",
+        group: "Baurus Caxienses",
+        desc: "Serve 1 pessoa • Coxão mole de primeira, presunto e queijo no molho de tomate com verde, milho, ervilha e palmito. Acompanha arroz, salada mista e pães.",
+        badge: "Individual Completo 🍽️",
+        rating: "4.9",
+        img: "assets/produtos/rei-individual.jpg",
+        price: 83.00,
+        hasAdicionais: true,
+        options: {
+            addons: [
+                { name: "Molho Vermelho da Casa", price: 4.00 },
+                { name: "Ovo Frito Extra", price: 3.50 }
+            ]
+        }
+    },
+    {
+        id: "pantera-039",
+        name: "Bauru Quatro Queijos ao Prato (Individual)",
+        category: "baurus",
+        group: "Baurus Caxienses",
+        desc: "Coxão mole, presunto e queijo ao molho de quatro queijos e ervas finas.",
+        badge: "Ultra Cremoso 🧀",
+        rating: "4.9",
+        img: "assets/produtos/quatro-queijos.jpg",
+        price: 83.00,
+        hasAdicionais: true,
+        options: {
+            addons: [
+                { name: "Queijo Colonial Extra", price: 6.00 },
+                { name: "Ovo Frito Extra", price: 3.50 }
+            ]
+        }
+    },
+    {
+        id: "pantera-040",
+        name: "1/2 Bauru Quatro Queijos (Serve 2 Pessoas)",
+        category: "baurus",
+        group: "Baurus Caxienses",
+        desc: "Serve 2 pessoas • Coxão mole, presunto e queijo ao molho de quatro queijos e ervas finas.",
+        badge: "Para Dividir 👥",
+        rating: "4.9",
+        img: "assets/produtos/meio-quatro-queijos.jpg",
+        price: 170.00,
+        hasAdicionais: true,
+        options: {
+            addons: [
+                { name: "Queijo Colonial Extra", price: 6.00 },
+                { name: "Ovo Frito Extra", price: 3.50 }
+            ]
+        }
+    },
+    {
+        id: "pantera-041",
+        name: "Fortaia com Salame",
+        category: "fortaias",
+        group: "Fortaias",
+        desc: "Serve 1 pessoa • Ovos frescos, queijo derretido, salame, tomates frescos e orégano.",
+        badge: "Novidade 🍳",
+        rating: "4.9",
+        img: "assets/produtos/fortaia-salame.jpg",
+        price: 42.00,
+        hasAdicionais: false
+    },
+    {
+        id: "pantera-042",
+        name: "Fortaia com Presunto",
+        category: "fortaias",
+        group: "Fortaias",
+        desc: "Serve 1 pessoa • Ovos frescos, presunto, queijo derretido, tomates frescos e orégano.",
+        badge: "Novidade 🍳",
+        rating: "4.9",
+        img: "assets/produtos/fortaia-presunto.jpg",
+        price: 42.00,
+        hasAdicionais: false
+    },
 
     // --- À LA MINUTAS & PRATOS CASEIROS ---
     {
         id: "pantera-006",
-        name: "À La Minuta Tradicional de Filé Mignon",
+        name: "À La Minuta (Individual)",
         category: "pratos",
         group: "Mais Vendidos",
-        desc: "Bife macio de filé mignon grelhado na chapa, arroz branco, feijão caseiro temperado no capricho, ovo estalado com gema mole, batata frita e salada mista.",
+        desc: "Serve 1 pessoa • Dois bifes grelhados, dois ovos fritos, feijão temperado, arroz, fritas e salada mista.",
         badge: "Comida Caseira Premiada 🍳",
-        rating: "5.0",
-        img: "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=700&q=80",
-        price: 44.90,
+        rating: "4.9",
+        img: "assets/produtos/minuta-individual.jpg",
+        price: 83.00,
         hasAdicionais: true,
         options: {
             doneness: ["Ao Ponto", "Bem Passado", "Mal Passado"],
@@ -670,7 +766,7 @@ function renderCatalog() {
     grid.innerHTML = items.map(p => `
         <article class="product-card" data-id="${p.id}">
             <div class="card-img-wrapper" onclick="window.openProductModal('${p.id}')">
-                <img src="${p.img}" alt="${p.name}" class="product-img" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=600&q=80';">
+                <img src="${p.img}" alt="${p.name}" class="product-img" loading="lazy" onerror="this.onerror=null;this.src='assets/produtos/bauru-individual.jpg';">
                 ${p.badge ? `<span class="badge-tag">${p.badge}</span>` : ''}
                 <div class="rating-pill">
                     <i data-lucide="star" style="width:12px;height:12px;fill:#F59E0B;stroke:none;"></i>
@@ -1120,7 +1216,7 @@ function renderCartItemsList(subtotal) {
         const itemTotal = item.unitPrice * item.quantity;
         return `
             <div class="cart-item-card">
-                <img src="${item.img}" alt="${item.name}" class="cart-item-thumb" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=200&q=80';">
+                <img src="${item.img}" alt="${item.name}" class="cart-item-thumb" onerror="this.onerror=null;this.src='assets/produtos/bauru-individual.jpg';">
                 
                 <div class="cart-item-details">
                     <div class="cart-item-header">
