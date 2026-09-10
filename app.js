@@ -9,7 +9,7 @@
 // WhatsApp Oficial do Botequim Pantera (Rua Tronca, 1879 - Bairro Exposição)
 const WHATSAPP_PHONE = '555434196942';
 const CHAVE_PIX_OFICIAL = '5434196942';
-const CATALOG_STORAGE_KEY = 'pantera_catalog_v20260901_v3';
+const CATALOG_STORAGE_KEY = 'pantera_catalog_v20260911_v4';
 
 // Taxas de Entrega por Bairro em Caxias do Sul
 const DELIVERY_ZONES = [
@@ -37,17 +37,16 @@ const DEFAULT_PRODUCTS = [
     // --- BAURUS CAXIENSES (DESTAQUES) ---
     {
         id: "pantera-001",
-        name: "Bauru Caxiense Tradicional ao Prato",
+        name: "Bauru ao Prato (Individual)",
         category: "baurus",
         group: "Mais Vendidos",
-        desc: "O consagrado de Caxias: filé mignon macio grelhado na chapa, queijo colonial derretido, presunto, ovo estalado com gema mole, alface, tomate e batatas fritas sequinhas e crocantes.",
+        desc: "Serve 1 pessoa • Bauru individual de coxão mole com presunto e queijo ao molho de tomate. Acompanha arroz, fritas, salada mista e pães.",
         badge: "Campeão Sabores do Sul ⭐",
-        rating: "5.0",
+        rating: "4.9",
         img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80",
-        price: 49.90,
+        price: 78.00,
         hasAdicionais: true,
         options: {
-            doneness: ["Ao Ponto (Recomendado)", "Mal Passado", "Bem Passado"],
             sizes: [
                 { name: "Individual Generoso", extra: 0 },
                 { name: "Para 2 Pessoas (Casal • Filés & Fritas Duplas)", extra: 36.00 }
@@ -62,17 +61,16 @@ const DEFAULT_PRODUCTS = [
     },
     {
         id: "pantera-002",
-        name: "Bauru Pantera Express (Prato Executivo)",
+        name: "1/2 Bauru Tradicional (Serve 2 Pessoas)",
         category: "baurus",
-        group: "Mais Vendidos",
-        desc: "Prato executivo individual do clássico bauru caxiense: bife de filé na chapa com queijo derretido, arroz branco soltinho, feijão caseiro, ovo frito e fritas.",
-        badge: "Mais Pedido no Almoço ⚡",
+        group: "Baurus Caxienses",
+        desc: "Serve 2 pessoas • Meio bauru tradicional: coxão mole, presunto de primeira e queijo derretido no molho de tomate caseiro. Acompanha arroz branco, fritas, salada mista e pães.",
+        badge: "Para Dividir 👥",
         rating: "4.9",
         img: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?auto=format&fit=crop&w=700&q=80",
-        price: 38.90,
+        price: 162.00,
         hasAdicionais: true,
         options: {
-            doneness: ["Ao Ponto", "Bem Passado", "Mal Passado"],
             addons: [
                 { name: "Molho Vermelho da Casa", price: 4.00 },
                 { name: "Ovo Extra", price: 3.50 }
@@ -81,17 +79,16 @@ const DEFAULT_PRODUCTS = [
     },
     {
         id: "pantera-003",
-        name: "Bauru Rei Pantera Especial",
+        name: "Bauru Rei Inteiro (Serve ~4 Pessoas)",
         category: "baurus",
-        group: "Mais Vendidos",
-        desc: "O bauru mais generoso do Pantera: corte nobre de filé mignon grelhado na chapa, queijo em dobro, presunto nobre, tiras de bacon crocante, 2 ovos e montanha de batatas fritas.",
+        group: "Baurus Caxienses",
+        desc: "Serve ~4 pessoas • Coxão mole, presunto e queijo no molho de tomate com verde, milho, ervilha e palmito. Acompanha arroz, fritas, salada mista e pães.",
         badge: "Rei da Casa 👑",
-        rating: "5.0",
+        rating: "4.9",
         img: "https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=700&q=80",
-        price: 59.90,
+        price: 280.00,
         hasAdicionais: true,
         options: {
-            doneness: ["Ao Ponto (Recomendado)", "Mal Passado", "Bem Passado"],
             sizes: [
                 { name: "Individual Grande", extra: 0 },
                 { name: "Para 2 a 3 Pessoas (Banquete)", extra: 42.00 }
@@ -104,17 +101,16 @@ const DEFAULT_PRODUCTS = [
     },
     {
         id: "pantera-004",
-        name: "Bauru Quatro Queijos do Pantera",
+        name: "Bauru Abraçadinho Inteiro (Serve ~4 Pessoas)",
         category: "baurus",
         group: "Baurus Caxienses",
-        desc: "Suculento filé mignon coberto por uma fusão cremosa de Queijo Colonial da Serra, Provolone defumado, Gorgonzola e Catupiry legítimo. Acompanha fritas douradas.",
-        badge: "Ultra Cremoso 🧀",
+        desc: "Serve ~4 pessoas • Abraçadinho inteiro sem presunto: coxão mole com queijo derretido no molho de tomate caseiro. Acompanha arroz, fritas, salada mista e pães frescos.",
+        badge: "Para Compartilhar 👥",
         rating: "4.9",
         img: "https://images.unsplash.com/photo-1582169296194-e4d644c48063?auto=format&fit=crop&w=700&q=80",
-        price: 54.90,
+        price: 255.00,
         hasAdicionais: true,
         options: {
-            doneness: ["Ao Ponto", "Bem Passado", "Mal Passado"],
             addons: [
                 { name: "Bacon Crocante", price: 5.50 },
                 { name: "Ovo Frito", price: 3.50 }
@@ -123,19 +119,37 @@ const DEFAULT_PRODUCTS = [
     },
     {
         id: "pantera-005",
-        name: "Bauru de Peito de Frango com Queijo & Catupiry",
+        name: "1/2 Bauru Abraçadinho (Serve 2 Pessoas)",
         category: "baurus",
         group: "Baurus Caxienses",
-        desc: "Filé de peito de frango marinado em ervas finas e grelhado na chapa, coberto com Catupiry original, queijo colonial, presunto, ovo e batata frita.",
-        badge: "Leve & Suculento ✨",
-        rating: "4.8",
-        img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=700&q=80",
-        price: 42.90,
+        desc: "Serve 2 pessoas • Meio abraçadinho sem presunto: coxão mole com queijo derretido no molho de tomate caseiro. Acompanha arroz, fritas, salada mista e pães.",
+        badge: "Para Dividir 👥",
+        rating: "4.9",
+        img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=700&q=80",
+        price: 158.00,
         hasAdicionais: true,
         options: {
             addons: [
                 { name: "Bacon em Tiras", price: 5.50 },
                 { name: "Ovo Frito Extra", price: 3.50 }
+            ]
+        }
+    },
+    {
+        id: "pantera-036",
+        name: "Bauru ao Prato Vegetariano",
+        category: "baurus",
+        group: "Baurus Caxienses",
+        desc: "Serve 1 pessoa • Ovos mexidos, queijo ao molho de tomate com verde, milho, ervilha e palmito. Acompanha arroz, fritas, salada mista e pães.",
+        badge: "Vegetariano 🌱",
+        rating: "4.9",
+        img: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
+        price: 63.00,
+        hasAdicionais: true,
+        options: {
+            addons: [
+                { name: "Ovo Frito Extra", price: 3.50 },
+                { name: "Queijo Colonial Extra", price: 6.00 }
             ]
         }
     },
